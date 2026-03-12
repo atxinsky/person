@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRETRA. — I Build At The Edge</title>
+  <meta name="description" content="Where AI, quantitative trading, and education collide." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TRETRA. — AI × Trading × Education" />
+  <meta property="og:description" content="Building at the intersection of AI, quantitative trading, and education." />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@travider" />
+  <meta name="twitter:title" content="TRETRA. — AI × Trading × Education" />
+  <meta name="twitter:description" content="Building at the intersection of AI, quantitative trading, and education." />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tretra",
+    "alternateName": "Teraflame",
+    "url": "https://tretra.com",
+    "sameAs": ["https://x.com/travider", "https://github.com/atxinsky"],
+    "jobTitle": "AI Educator & Quantitative Trader",
+    "knowsAbout": ["Artificial Intelligence", "Cryptocurrency Trading", "Education Technology"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-circle"><span class="cursor-text">View</span></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">TRETRA<span class="accent">.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+      <a href="#writing" class="nav-link" data-i18n="nav.writing">Writing</a>
+      <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      <button class="lang-toggle" id="langToggle">中</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#projects" class="mobile-link" data-i18n="nav.projects">Projects</a>
+    <a href="#writing" class="mobile-link" data-i18n="nav.writing">Writing</a>
+    <a href="#about" class="mobile-link" data-i18n="nav.about">About</a>
+    <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
+    <button class="lang-toggle mobile-lang" id="langToggleMobile">中</button>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-ghost">T</div>
+      <!-- 3D Scene Container -->
+      <div class="hero-3d" id="hero3d"></div>
+      <div class="hero-content">
+        <p class="hero-pre" data-i18n="hero.preLabel">// tretra — @travider</p>
+        <h1 class="hero-title">
+          <span class="hero-line" data-parallax="0.15" data-line="0"><span class="hero-line-inner" data-i18n="hero.h1.0">I BUILD</span></span>
+          <span class="hero-line" data-parallax="0.25" data-line="1"><span class="hero-line-inner" data-i18n="hero.h1.1">AT THE</span></span>
+          <span class="hero-line" data-parallax="0.35" data-line="2"><span class="hero-line-inner" data-i18n="hero.h1.2">EDGE.</span></span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Where artificial intelligence, quantitative trading, and education collide — that's where I work.</p>
+        <div class="hero-descriptors" id="heroDescriptors"></div>
+        <a href="#projects" class="hero-cta" data-i18n="hero.cta">Explore</a>
+      </div>
+    </section>
+
+    <!-- Marquee 1 -->
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <span class="marquee-content">AI &times; TRADING &times; EDUCATION &times; VIBECODING &times; CRYPTO &times; AI &times; TRADING &times; EDUCATION &times; VIBECODING &times; CRYPTO &times; AI &times; TRADING &times; EDUCATION &times; VIBECODING &times; CRYPTO &times;&nbsp;</span>
+        <span class="marquee-content" aria-hidden="true">AI &times; TRADING &times; EDUCATION &times; VIBECODING &times; CRYPTO &times; AI &times; TRADING &times; EDUCATION &times; VIBECODING &times; CRYPTO &times; AI &times; TRADING &times; EDUCATION &times; VIBECODING &times; CRYPTO &times;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <section class="section projects" id="projects">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title reveal-text" id="projectsTitle"></h2>
+      </div>
+      <div class="projects-list" id="projectsList"></div>
+    </section>
+
+    <!-- Marquee 2 -->
+    <div class="marquee-strip marquee-reverse">
+      <div class="marquee-track marquee-track-reverse">
+        <span class="marquee-content">CLAUDE &times; REACT &times; GO &times; PINE SCRIPT &times; STREAMLIT &times; VERCEL &times; TRADINGVIEW &times; BINANCE &times; CLAUDE &times; REACT &times; GO &times; PINE SCRIPT &times; STREAMLIT &times; VERCEL &times; TRADINGVIEW &times; BINANCE &times;&nbsp;</span>
+        <span class="marquee-content" aria-hidden="true">CLAUDE &times; REACT &times; GO &times; PINE SCRIPT &times; STREAMLIT &times; VERCEL &times; TRADINGVIEW &times; BINANCE &times; CLAUDE &times; REACT &times; GO &times; PINE SCRIPT &times; STREAMLIT &times; VERCEL &times; TRADINGVIEW &times; BINANCE &times;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- Writing -->
+    <section class="section writing" id="writing">
+      <div class="writing-layout">
+        <div class="writing-left">
+          <span class="section-num">02</span>
+          <h2 class="section-title reveal-text" id="writingTitle"></h2>
+        </div>
+        <div class="writing-right" id="writingList"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="about-layout">
+        <div class="about-left">
+          <span class="section-num">03</span>
+          <h2 class="section-title reveal-text" id="aboutTitle"></h2>
+          <div class="stats-grid" id="statsGrid"></div>
+        </div>
+        <div class="about-right">
+          <div class="about-paragraphs" id="aboutParagraphs"></div>
+          <div class="toolchain" id="toolchain">
+            <p class="toolchain-label">TOOLCHAIN</p>
+            <div class="toolchain-tags" id="toolchainTags"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <span class="section-num">04</span>
+      <h2 class="section-title contact-title reveal-text" id="contactTitle"></h2>
+      <p class="contact-subtitle" data-i18n="contact.subtitle">Always open to interesting conversations and collaborations.</p>
+      <div class="contact-links" id="contactLinks"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span class="footer-copy" data-i18n="footer.copyright">© 2024 Tretra. Built with AI co-pilots.</span>
+    <a href="#hero" class="footer-top" data-i18n="footer.backToTop">Back to top ↑</a>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
