@@ -5,18 +5,10 @@ import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js'
 // State
 // ═══════════════════════════════════════════
 let currentLang = 'en'
-let mouseX = -100
-let mouseY = -100
-let dotX = -100
-let dotY = -100
-let circleX = -100
-let circleY = -100
 
 // ═══════════════════════════════════════════
 // DOM refs
 // ═══════════════════════════════════════════
-const cursorDot = document.querySelector('.cursor-dot')
-const cursorCircle = document.querySelector('.cursor-circle')
 const navbar = document.getElementById('navbar')
 const hamburger = document.getElementById('hamburger')
 const mobileMenu = document.getElementById('mobileMenu')
@@ -24,57 +16,44 @@ const langToggle = document.getElementById('langToggle')
 const langToggleMobile = document.getElementById('langToggleMobile')
 
 // ═══════════════════════════════════════════
-// Custom Cursor
+// Custom Cursor (Version A style)
 // ═══════════════════════════════════════════
 function initCursor() {
-  if (window.matchMedia('(pointer: coarse)').matches) return
+  const cursor = document.getElementById('customCursor')
+  if (!cursor || window.innerWidth < 768) return
+
+  const interactiveSelectors = 'a, button, .project-card, .writing-row, .contact-btn, .tool-tag, .descriptor-pill, .stat-card'
+  const cursorPos = { x: -100, y: -100 }
 
   document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX
-    mouseY = e.clientY
+    cursorPos.x = e.clientX
+    cursorPos.y = e.clientY
   })
 
-  document.addEventListener('mouseenter', () => {
-    cursorDot.style.opacity = '1'
-    cursorCircle.style.opacity = '1'
+  function updateCursor() {
+    cursor.style.transform = `translate3d(${cursorPos.x}px, ${cursorPos.y}px, 0)`
+    requestAnimationFrame(updateCursor)
+  }
+  updateCursor()
+
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(interactiveSelectors)) {
+      cursor.classList.add('hovering')
+    }
+  })
+
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(interactiveSelectors)) {
+      cursor.classList.remove('hovering')
+    }
   })
 
   document.addEventListener('mouseleave', () => {
-    cursorDot.style.opacity = '0'
-    cursorCircle.style.opacity = '0'
+    cursor.style.opacity = '0'
   })
-
-  const hoverTargets = () => document.querySelectorAll('a, button, .project-card, .writing-row, .contact-btn, .tool-tag, .descriptor-pill')
-
-  const addHoverListeners = () => {
-    hoverTargets().forEach((el) => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'))
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'))
-    })
-  }
-
-  addHoverListeners()
-
-  const observer = new MutationObserver(() => {
-    addHoverListeners()
+  document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1'
   })
-  observer.observe(document.body, { childList: true, subtree: true })
-
-  function animateCursor() {
-    dotX += (mouseX - dotX) * 0.35
-    dotY += (mouseY - dotY) * 0.35
-    circleX += (mouseX - circleX) * 0.12
-    circleY += (mouseY - circleY) * 0.12
-
-    cursorDot.style.left = dotX + 'px'
-    cursorDot.style.top = dotY + 'px'
-    cursorCircle.style.left = circleX + 'px'
-    cursorCircle.style.top = circleY + 'px'
-
-    requestAnimationFrame(animateCursor)
-  }
-
-  requestAnimationFrame(animateCursor)
 }
 
 // ═══════════════════════════════════════════
@@ -440,22 +419,22 @@ function renderProjects() {
   const data = content.projects[currentLang]
 
   document.getElementById('projectsTitle').innerHTML =
-    data.title.map((line) => wrapWordsForReveal(line)).join('<br>')
+    data.title.map((line) => `<span>${line}</span>`).join('')
 
   const list = document.getElementById('projectsList')
   list.innerHTML = data.items
-    .map((item) => `
-      <div class="project-card">
-        <div class="project-left">
-          <h3 class="project-name">${item.name}</h3>
-          ${item.nameSub ? `<p class="project-name-sub">${item.nameSub}</p>` : ''}
-        </div>
-        <div class="project-right">
-          <p class="project-desc">${item.desc}</p>
-          <div class="project-meta">
-            ${item.tags.map((t) => `<span class="project-tag">${t}</span>`).join('')}
-            <span class="project-status">${item.status}</span>
+    .map((item, i) => `
+      <div class="project-card" style="transition-delay: ${i * 0.08}s">
+        <div class="project-card-header">
+          <div>
+            <div class="project-name">${item.name}</div>
+            ${item.nameSub ? `<div class="project-name-sub">${item.nameSub}</div>` : ''}
           </div>
+          <span class="project-status">${item.status}</span>
+        </div>
+        <p class="project-desc">${item.desc}</p>
+        <div class="project-tags">
+          ${item.tags.map((t) => `<span class="project-tag">${t}</span>`).join('')}
         </div>
       </div>
     `)
@@ -557,6 +536,7 @@ function renderAll() {
   requestAnimationFrame(() => {
     initRevealObserver()
     initCounters()
+    initCardTilt()
   })
 }
 
@@ -576,6 +556,40 @@ function initSmoothScroll() {
 }
 
 // ═══════════════════════════════════════════
+// 3D Card Tilt Effect (from Version A)
+// ═══════════════════════════════════════════
+function initCardTilt() {
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      const centerX = rect.width / 2
+      const centerY = rect.height / 2
+
+      const rotateX = ((y - centerY) / centerY) * -6
+      const rotateY = ((x - centerX) / centerX) * 6
+
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`
+
+      const percentX = (x / rect.width) * 100
+      const percentY = (y / rect.height) * 100
+      card.style.setProperty('--mouse-x', `${percentX}%`)
+      card.style.setProperty('--mouse-y', `${percentY}%`)
+    })
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = ''
+      card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s var(--ease-out), background 0.4s'
+    })
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.15s ease-out, background 0.4s'
+    })
+  })
+}
+
+// ═══════════════════════════════════════════
 // Init
 // ═══════════════════════════════════════════
 function init() {
@@ -586,6 +600,7 @@ function init() {
   initLangToggle()
   initParallax()
   initSmoothScroll()
+  initCardTilt()
 }
 
 document.addEventListener('DOMContentLoaded', init)

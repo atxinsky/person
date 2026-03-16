@@ -41,8 +41,11 @@
   <div class="noise-overlay"></div>
 
   <!-- Custom cursor -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-circle"><span class="cursor-text">View</span></div>
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-text">View</span>
+  </div>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
@@ -72,18 +75,20 @@
     <!-- Hero -->
     <section class="hero" id="hero">
       <div class="hero-ghost">T</div>
-      <!-- 3D Scene Container -->
-      <div class="hero-3d" id="hero3d"></div>
       <div class="hero-content">
-        <p class="hero-pre" data-i18n="hero.preLabel">// tretra — @travider</p>
-        <h1 class="hero-title">
-          <span class="hero-line" data-parallax="0.15" data-line="0"><span class="hero-line-inner" data-i18n="hero.h1.0">I BUILD</span></span>
-          <span class="hero-line" data-parallax="0.25" data-line="1"><span class="hero-line-inner" data-i18n="hero.h1.1">AT THE</span></span>
-          <span class="hero-line" data-parallax="0.35" data-line="2"><span class="hero-line-inner" data-i18n="hero.h1.2">EDGE.</span></span>
-        </h1>
-        <p class="hero-subtitle" data-i18n="hero.subtitle">Where artificial intelligence, quantitative trading, and education collide — that's where I work.</p>
-        <div class="hero-descriptors" id="heroDescriptors"></div>
-        <a href="#projects" class="hero-cta" data-i18n="hero.cta">Explore</a>
+        <div class="hero-text">
+          <p class="hero-pre" data-i18n="hero.preLabel">// tretra — @travider</p>
+          <h1 class="hero-title">
+            <span class="hero-line" data-parallax="0.15" data-line="0"><span class="hero-line-inner" data-i18n="hero.h1.0">I BUILD</span></span>
+            <span class="hero-line" data-parallax="0.25" data-line="1"><span class="hero-line-inner" data-i18n="hero.h1.1">AT THE</span></span>
+            <span class="hero-line" data-parallax="0.35" data-line="2"><span class="hero-line-inner" data-i18n="hero.h1.2">EDGE.</span></span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Where artificial intelligence, quantitative trading, and education collide — that's where I work.</p>
+          <div class="hero-descriptors" id="heroDescriptors"></div>
+          <a href="#projects" class="hero-cta" data-i18n="hero.cta">Explore</a>
+        </div>
+        <!-- 3D Scene Container -->
+        <div class="hero-3d" id="hero3d"></div>
       </div>
     </section>
 
@@ -97,11 +102,13 @@
 
     <!-- Projects -->
     <section class="section projects" id="projects">
-      <div class="section-header">
-        <span class="section-num">01</span>
-        <h2 class="section-title reveal-text" id="projectsTitle"></h2>
+      <div class="projects-layout">
+        <div class="projects-left">
+          <span class="section-num">01</span>
+          <h2 class="section-title" id="projectsTitle"></h2>
+        </div>
+        <div class="projects-grid" id="projectsList"></div>
       </div>
-      <div class="projects-list" id="projectsList"></div>
     </section>
 
     <!-- Marquee 2 -->
