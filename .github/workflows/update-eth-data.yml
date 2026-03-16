@@ -1,0 +1,30 @@
+name: Update ETH Data
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # UTC 8:00 = 北京时间 16:00
+  workflow_dispatch:  # 手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest ETH data
+        run: node scripts/update-eth-data.cjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add eth/data.json
+          git diff --staged --quiet || git commit -m "chore: auto-update ETH data $(date -u +%Y-%m-%d)"
+          git push
