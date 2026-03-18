@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-03-17T08:41:58.567Z",
-  "price": 2322.7,
-  "market_cap": 280249236617,
-  "volume_24h": 26378460596,
-  "change_24h": 3.59551,
-  "change_7d": 13.64648,
-  "change_30d": 11.12547,
+  "updated_at": "2026-03-18T08:38:25.642Z",
+  "price": 2321.12,
+  "market_cap": 280062931763,
+  "volume_24h": 18588736048,
+  "change_24h": -0.0336,
+  "change_7d": 15.32462,
+  "change_30d": 17.81503,
   "fear_greed": {
-    "value": 28,
+    "value": 26,
     "label": "Fear"
   },
   "ath": 4946.05,
   "ath_date": "2025-08-24T19:21:03.333Z",
-  "ath_change": -53.03931,
-  "circulating_supply": 120691856.225145
+  "ath_change": -53.07111,
+  "circulating_supply": 120691832.4378727
 }
