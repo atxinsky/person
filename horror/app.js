@@ -22,11 +22,11 @@ const CATEGORIES = {
 // ========== HELPERS ==========
 function getCategoryLabel(cat) {
   const labels = {
-    'body-horror': '肉体恐怖', 'cthulhu': '克苏鲁', 'rob-zombie': 'Rob Zombie',
+    'body-horror': 'Body Horror', 'cthulhu': 'Cthulhu', 'rob-zombie': 'Rob Zombie',
     'tim-burton': 'Tim Burton', 'john-carpenter': 'John Carpenter',
-    'stephen-king': '斯蒂芬金', 'del-toro': '德尔托罗',
-    'cult-top10': 'Cult Top10', 'horror-top10': '恐怖十佳', 'erotic-cinema': '情爱电影',
-    'cult-collection': '个人珍藏'
+    'stephen-king': 'Stephen King', 'del-toro': 'Del Toro',
+    'cult-top10': 'Cult Top10', 'horror-top10': 'Horror Top10', 'erotic-cinema': 'Erotic Cinema',
+    'cult-collection': 'Collection'
   }
   return labels[cat] || cat
 }

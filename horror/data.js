@@ -1,7 +1,7 @@
 // ========== MOVIE DATA ==========
 const MOVIES = {
   'body-horror': [
-    { year: 1980, title_cn: '灵魂大搜索', title_en: 'Altered States', country: '美国', desc: '科学家用致幻剂探索意识，身体发生退化变异', rating: '7.1', douban: 'https://movie.douban.com/subject/1293762/', poster: 'https://img3.doubanio.com/view/photo/l/public/p1609164133.jpg' },
+    { year: 1980, title_cn: '灵魂大搜索', title_en: 'Altered States', country: '美国', desc: '科学家用致幻剂探索意识，身体发生退化变异', rating: '7.1', douban: 'https://movie.douban.com/subject/1293762/', poster: 'https://image.tmdb.org/t/p/w500/fsoaPN5SWYgZ4B7GG9nRNj33so.jpg' },
     { year: 1981, title_cn: '美国狼人在伦敦', title_en: 'An American Werewolf in London', country: '美国/英国', desc: '美国青年在英国被狼人咬伤后逐渐变身', rating: '7.3', douban: 'https://movie.douban.com/subject/1295077/', poster: 'https://image.tmdb.org/t/p/w500/hVEqUASJmCQaolkKFEySCHZ8uKG.jpg' },
     { year: 1982, title_cn: '怪形', title_en: 'The Thing', country: '美国', desc: '南极科考队遭遇能模仿任何生物的外星怪物', rating: '8.2', douban: 'https://movie.douban.com/subject/1296794/', poster: 'https://image.tmdb.org/t/p/w500/tzGY49kseSE9QAKk47uuDGwnSCu.jpg' },
     { year: 1983, title_cn: '录影带谋杀案', title_en: 'Videodrome', country: '加拿大', desc: '电视台经理沉迷神秘节目，身体产生诡异变异', rating: '7.5', douban: 'https://movie.douban.com/subject/1295276/', poster: 'https://image.tmdb.org/t/p/w500/qqqkiZSU9EBGZ1KiDmfn07S7qvv.jpg' },
