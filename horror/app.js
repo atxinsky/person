@@ -15,7 +15,8 @@ const CATEGORIES = {
   'del-toro': { title: 'Guillermo del Toro', subtitle: '吉尔莫·德尔·托罗导演作品', icon: '👹' },
   'cult-top10': { title: 'Cult Top 10', subtitle: '个人cult片top10 · B站浅野心-', icon: '🔥' },
   'horror-top10': { title: 'Horror Top 10', subtitle: '恐怖片十佳 · B站浅野心-', icon: '👻' },
-  'erotic-cinema': { title: 'Erotic Cinema', subtitle: '情爱电影推荐 · B站浅野心-', icon: '🌹' }
+  'erotic-cinema': { title: 'Erotic Cinema', subtitle: '情爱电影推荐 · B站浅野心-', icon: '🌹' },
+  'cult-collection': { title: 'Cult Collection', subtitle: '个人珍藏 · 经典Cult电影收藏', icon: '📼' }
 }
 
 // ========== HELPERS ==========
@@ -24,7 +25,8 @@ function getCategoryLabel(cat) {
     'body-horror': '肉体恐怖', 'cthulhu': '克苏鲁', 'rob-zombie': 'Rob Zombie',
     'tim-burton': 'Tim Burton', 'john-carpenter': 'John Carpenter',
     'stephen-king': '斯蒂芬金', 'del-toro': '德尔托罗',
-    'cult-top10': 'Cult Top10', 'horror-top10': '恐怖十佳', 'erotic-cinema': '情爱电影'
+    'cult-top10': 'Cult Top10', 'horror-top10': '恐怖十佳', 'erotic-cinema': '情爱电影',
+    'cult-collection': '个人珍藏'
   }
   return labels[cat] || cat
 }
@@ -118,7 +120,7 @@ function renderContent() {
 
 function renderAllCategories(container) {
   let html = ''
-  const order = ['body-horror', 'cthulhu', 'rob-zombie', 'john-carpenter', 'tim-burton', 'stephen-king', 'del-toro', 'cult-top10', 'horror-top10', 'erotic-cinema']
+  const order = ['body-horror', 'cthulhu', 'rob-zombie', 'john-carpenter', 'tim-burton', 'stephen-king', 'del-toro', 'cult-top10', 'horror-top10', 'erotic-cinema', 'cult-collection']
   order.forEach(catKey => {
     const movies = MOVIES[catKey]
     if (!movies || movies.length === 0) return
