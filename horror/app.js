@@ -12,7 +12,10 @@ const CATEGORIES = {
   'tim-burton': { title: 'Tim Burton', subtitle: '蒂姆·波顿导演作品', icon: '🎭' },
   'john-carpenter': { title: 'John Carpenter', subtitle: '约翰·卡朋特导演作品', icon: '🔪' },
   'stephen-king': { title: 'Stephen King', subtitle: '斯蒂芬·金小说改编电影', icon: '📖' },
-  'del-toro': { title: 'Guillermo del Toro', subtitle: '吉尔莫·德尔·托罗导演作品', icon: '👹' }
+  'del-toro': { title: 'Guillermo del Toro', subtitle: '吉尔莫·德尔·托罗导演作品', icon: '👹' },
+  'cult-top10': { title: 'Cult Top 10', subtitle: '个人cult片top10 · B站浅野心-', icon: '🔥' },
+  'horror-top10': { title: 'Horror Top 10', subtitle: '恐怖片十佳 · B站浅野心-', icon: '👻' },
+  'erotic-cinema': { title: 'Erotic Cinema', subtitle: '情爱电影推荐 · B站浅野心-', icon: '🌹' }
 }
 
 // ========== HELPERS ==========
@@ -20,7 +23,8 @@ function getCategoryLabel(cat) {
   const labels = {
     'body-horror': '肉体恐怖', 'cthulhu': '克苏鲁', 'rob-zombie': 'Rob Zombie',
     'tim-burton': 'Tim Burton', 'john-carpenter': 'John Carpenter',
-    'stephen-king': '斯蒂芬金', 'del-toro': '德尔托罗'
+    'stephen-king': '斯蒂芬金', 'del-toro': '德尔托罗',
+    'cult-top10': 'Cult Top10', 'horror-top10': '恐怖十佳', 'erotic-cinema': '情爱电影'
   }
   return labels[cat] || cat
 }
@@ -114,7 +118,7 @@ function renderContent() {
 
 function renderAllCategories(container) {
   let html = ''
-  const order = ['body-horror', 'cthulhu', 'rob-zombie', 'john-carpenter', 'tim-burton', 'stephen-king', 'del-toro']
+  const order = ['body-horror', 'cthulhu', 'rob-zombie', 'john-carpenter', 'tim-burton', 'stephen-king', 'del-toro', 'cult-top10', 'horror-top10', 'erotic-cinema']
   order.forEach(catKey => {
     const movies = MOVIES[catKey]
     if (!movies || movies.length === 0) return
