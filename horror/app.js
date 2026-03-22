@@ -34,8 +34,15 @@ function getCategoryLabel(cat) {
 function getFilteredMovies() {
   let movies = []
   if (state.currentCategory === 'all') {
+    const seen = new Set()
     Object.keys(MOVIES).forEach(cat => {
-      MOVIES[cat].forEach(m => movies.push({ ...m, category: cat }))
+      MOVIES[cat].forEach(m => {
+        const key = `${m.title_cn}_${m.year}`
+        if (!seen.has(key)) {
+          seen.add(key)
+          movies.push({ ...m, category: cat })
+        }
+      })
     })
   } else if (MOVIES[state.currentCategory]) {
     movies = MOVIES[state.currentCategory].map(m => ({ ...m, category: state.currentCategory }))
