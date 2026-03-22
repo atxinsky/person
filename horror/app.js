@@ -94,12 +94,6 @@ function renderContent() {
     return
   }
 
-  // Show all categories
-  if (state.currentCategory === 'all' && !state.searchQuery) {
-    renderAllCategories(container)
-    return
-  }
-
   let html = ''
   // Section header for single category
   if (state.currentCategory !== 'all' && CATEGORIES[state.currentCategory]) {
