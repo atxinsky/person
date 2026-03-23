@@ -1,7 +1,8 @@
 // ========== APP STATE ==========
 const state = {
   currentCategory: 'all',
-  searchQuery: ''
+  searchQuery: '',
+  sortBy: 'year'
 }
 
 // ========== CATEGORY CONFIG ==========
@@ -56,6 +57,9 @@ function getFilteredMovies() {
       (m.country && m.country.toLowerCase().includes(q)) ||
       (m.desc && m.desc.toLowerCase().includes(q))
     )
+  }
+  if (state.sortBy === 'rating') {
+    return movies.sort((a, b) => (parseFloat(b.rating) || 0) - (parseFloat(a.rating) || 0))
   }
   return movies.sort((a, b) => (a.year || 0) - (b.year || 0))
 }
@@ -163,10 +167,24 @@ function renderStats() {
     </div>
     <div class="search-box">
       <input type="text" class="search-input" id="searchInput" placeholder="搜索电影名、年份、国家...">
+      <button class="sort-btn" id="sortBtn" title="切换排序">按年份</button>
     </div>`
   document.getElementById('mainContent').insertAdjacentHTML('afterbegin', statsHtml)
   document.getElementById('searchInput').addEventListener('input', (e) => {
     state.searchQuery = e.target.value.trim()
+    renderContent()
+  })
+  document.getElementById('sortBtn').addEventListener('click', () => {
+    const btn = document.getElementById('sortBtn')
+    if (state.sortBy === 'year') {
+      state.sortBy = 'rating'
+      btn.textContent = '按评分 ★'
+      btn.classList.add('active')
+    } else {
+      state.sortBy = 'year'
+      btn.textContent = '按年份'
+      btn.classList.remove('active')
+    }
     renderContent()
   })
 }
