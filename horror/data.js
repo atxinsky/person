@@ -171,7 +171,7 @@ const MOVIES = {
   ],
 
   'cult-top10': [
-    { year: 1975, title_cn: '索多玛120天', title_en: 'Salò, or the 120 Days of Sodom', country: '意大利/法国', desc: '权力如何异化人，极端到让人不适的不只是画面', rating: '7.6', douban: 'https://movie.douban.com/subject/1296Mo/', poster: 'https://image.tmdb.org/t/p/w500/xnaDdiRfZlJaTf6JRc4in40eaeI.jpg' },
+    { year: 1975, title_cn: '索多玛120天', title_en: 'Salò, or the 120 Days of Sodom', country: '意大利/法国', desc: '权力如何异化人，极端到让人不适的不只是画面', rating: '7.6', douban: 'https://movie.douban.com/subject/4287466/', poster: 'https://image.tmdb.org/t/p/w500/xnaDdiRfZlJaTf6JRc4in40eaeI.jpg' },
     { year: 1981, title_cn: '着魔', title_en: 'Possession', country: '法国/西德', desc: '地铁通道封神表演，婚姻崩坏与冷战压力的极致表达', rating: '7.9', douban: 'https://movie.douban.com/subject/1293660/', poster: 'https://image.tmdb.org/t/p/w500/lUFZsUuJ0YyhBXH8D2BFUd6wODm.jpg' },
     { year: 1983, title_cn: '焦虑', title_en: 'Angst', country: '奥地利', desc: '跟拍杀人、无心理铺垫，纯粹的暴力与邪恶', rating: '7.3', douban: 'https://movie.douban.com/subject/1437109/', poster: 'https://image.tmdb.org/t/p/w500/nSYdWrPPwvcs5t5hG67XqDbwncG.jpg' },
     { year: 1989, title_cn: '铁男', title_en: 'Tetsuo: The Iron Man', country: '日本', desc: '工业噪音美学的cult入门作，导演风格极致体现', rating: '7.3', douban: 'https://movie.douban.com/subject/1295773/', poster: 'https://image.tmdb.org/t/p/w500/hufXkmILGy34VXEdQC69etY8Rt4.jpg' },
@@ -179,7 +179,7 @@ const MOVIES = {
     { year: 1997, title_cn: '迷失高速', title_en: 'Lost Highway', country: '美国/法国', desc: '大卫·林奇的身份裂变与诡异梦境感', rating: '7.8', douban: 'https://movie.douban.com/subject/1294117/', poster: 'https://image.tmdb.org/t/p/w500/fdTtij6H0sX9AzIjUeynh5zbfm7.jpg' },
     { year: 2001, title_cn: '杀手阿一', title_en: 'Ichi the Killer', country: '日本', desc: '暴力狂欢、极致重口，喜欢cult片就不能没看过', rating: '7.3', douban: 'https://movie.douban.com/subject/1308743/', poster: 'https://image.tmdb.org/t/p/w500/k8j4YLZlda98dqp9ErymKzjYowG.jpg' },
     { year: 2003, title_cn: '极道恐怖大剧场：牛头', title_en: 'Gozu', country: '日本', desc: '三池崇史发疯式作品，神经质荒诞带实验感', rating: '7.0', douban: 'https://movie.douban.com/subject/1307866/', poster: 'https://image.tmdb.org/t/p/w500/9kWnamFFjyECih8JfJ6k0D42Kv8.jpg' },
-    { year: 2008, title_cn: '爱的曝光', title_en: 'Love Exposure', country: '日本', desc: '邪教、暴力、爱，叙事反复与扭曲的cult代表作', rating: '8.5', douban: 'https://movie.douban.com/subject/3172erta/', poster: 'https://image.tmdb.org/t/p/w500/3QSGUdzG374H7pOxIdKNBpeLEUk.jpg' },
+    { year: 2008, title_cn: '爱的曝光', title_en: 'Love Exposure', country: '日本', desc: '邪教、暴力、爱，叙事反复与扭曲的cult代表作', rating: '8.5', douban: 'https://movie.douban.com/subject/2361266/', poster: 'https://image.tmdb.org/t/p/w500/3QSGUdzG374H7pOxIdKNBpeLEUk.jpg' },
     { year: 2010, title_cn: '冰冷热带鱼', title_en: 'Cold Fish', country: '日本', desc: '园子温代表作，日本家庭压抑下的变态控制与异化', rating: '7.6', douban: 'https://movie.douban.com/subject/4888529/', poster: 'https://image.tmdb.org/t/p/w500/669GmEZsyMlPliURX5myHTStslv.jpg' },
   ],
 
@@ -195,10 +195,10 @@ const MOVIES = {
 
   'erotic-cinema': [
     { year: 1984, title_cn: '白色罪恶', title_en: 'Crimes of Passion', country: '美国', desc: '情欲与道德的边界探索，争议性情色经典', rating: '6.0', poster: 'https://image.tmdb.org/t/p/w500/tstF6JMrZe75AdEAoPejwPrDfMA.jpg' },
-    { year: 2013, title_cn: '女性瘾者：第一部', title_en: 'Nymphomaniac: Vol. I', country: '丹麦/德国/法国/比利时/英国', desc: '拉斯·冯·提尔的欲望编年史，坦诚到令人不安', rating: '6.8', douban: 'https://movie.douban.com/subject/11erta21/', poster: 'https://image.tmdb.org/t/p/w500/piikL8vRh3s1ysHGTIqaZpdjfNU.jpg' },
+    { year: 2013, title_cn: '女性瘾者：第一部', title_en: 'Nymphomaniac: Vol. I', country: '丹麦/德国/法国/比利时/英国', desc: '拉斯·冯·提尔的欲望编年史，坦诚到令人不安', rating: '6.8', douban: 'https://movie.douban.com/subject/6827727/', poster: 'https://image.tmdb.org/t/p/w500/piikL8vRh3s1ysHGTIqaZpdjfNU.jpg' },
     { year: 2013, title_cn: '女性瘾者：第二部', title_en: 'Nymphomaniac: Vol. II', country: '丹麦/德国/法国/比利时/英国', desc: '更加黑暗的下半部，欲望的深渊与自我毁灭', rating: '6.5', douban: 'https://movie.douban.com/subject/25717843/', poster: 'https://image.tmdb.org/t/p/w500/iLUNqgNKuWn667kXCKztSxYbT3k.jpg' },
     { year: 2015, title_cn: '爱恋', title_en: 'Love', country: '法国/比利时', desc: '加斯帕·诺导演，3D实拍情欲关系的赤裸呈现', rating: '5.7', douban: 'https://movie.douban.com/subject/25852464/', poster: 'https://image.tmdb.org/t/p/w500/jx5rG229bzPzBgCXGslje75Y85x.jpg' },
-    { year: 2018, title_cn: '杀死伊芙', title_en: 'Killing Eve', country: '英国/美国', desc: '女特工与女杀手的致命暧昧追逐，情欲张力拉满', rating: '8.5', douban: 'https://movie.douban.com/subject/26915erta/', poster: 'https://image.tmdb.org/t/p/w500/4wKhTVw8aGq5AZMa0Q1spERdi7n.jpg' },
+    { year: 2018, title_cn: '杀死伊芙', title_en: 'Killing Eve', country: '英国/美国', desc: '女特工与女杀手的致命暧昧追逐，情欲张力拉满', rating: '8.5', douban: 'https://movie.douban.com/subject/26915602/', poster: 'https://image.tmdb.org/t/p/w500/4wKhTVw8aGq5AZMa0Q1spERdi7n.jpg' },
     { year: 2022, title_cn: '关于约会的一切', title_en: 'All About Dating', country: '中国', desc: '都市男女的约会百态，暧昧关系与情感博弈', rating: '5.8' },
     { year: 2023, title_cn: '有希望的男人', title_en: 'A Man of Reason', country: '韩国', desc: '爱情与暴力交织，男性角色的情欲与救赎', rating: '5.9', douban: 'https://movie.douban.com/subject/36047673/', poster: 'https://image.tmdb.org/t/p/w500/ePwZs1oOh4pg8UZP8DuVZZeIn89.jpg' },
   ],
@@ -307,6 +307,36 @@ const MOVIES = {
     { year: 1992, title_cn: '玩具兵团', title_en: 'Toys', country: '美国', desc: '罗宾·威廉姆斯对抗军事化玩具工厂的奇幻喜剧', rating: '7.6', douban: 'https://movie.douban.com/subject/1301707/', poster: 'https://image.tmdb.org/t/p/w500/l0YBVvOvOxoOkggTZ70tNGvGQo4.jpg' },
     { year: 2013, title_cn: '现实之舞', title_en: 'La danza de la realidad', country: '智利/法国', desc: '佐杜洛夫斯基自传电影，童年记忆的魔幻重构', rating: '8.7', douban: 'https://movie.douban.com/subject/19955955/', poster: 'https://image.tmdb.org/t/p/w500/2qbsG9t943DciYTHITISzXQltqt.jpg' },
     { year: 2016, title_cn: '诗无尽头', title_en: 'Poesía sin fin', country: '智利/日本/法国/英国', desc: '佐杜洛夫斯基自传续篇，青年时代的诗与疯狂', rating: '8.4', douban: 'https://movie.douban.com/subject/26352306/', poster: 'https://image.tmdb.org/t/p/w500/iJTWnSa3YOnD15zMME3ox9GP8XA.jpg' },
-    { year: 2020, title_cn: '渔女', title_en: 'Дочь рыбака', country: '俄罗斯', desc: '俄罗斯奇幻民间故事，渔夫之女的神秘旅程', rating: '7.1', douban: 'https://movie.douban.com/subject/35367485/', poster: 'https://image.tmdb.org/t/p/w500/wu9PwLLSyIbA1lpF8FbSvQ3cSHR.jpg' }
+    { year: 2020, title_cn: '渔女', title_en: 'Дочь рыбака', country: '俄罗斯', desc: '俄罗斯奇幻民间故事，渔夫之女的神秘旅程', rating: '7.1', douban: 'https://movie.douban.com/subject/35367485/', poster: 'https://image.tmdb.org/t/p/w500/wu9PwLLSyIbA1lpF8FbSvQ3cSHR.jpg' },
+    { year: 1957, title_cn: '恶魔之夜', title_en: 'Night of the Demon', country: '英国', desc: '学者调查邪教领袖，被古老恶魔诅咒追杀', rating: '7.3', douban: 'https://movie.douban.com/subject/1304107/', poster: 'https://image.tmdb.org/t/p/w500/ePAjGAhynpwEI5HbpIrB28ML6lg.jpg' },
+    { year: 1963, title_cn: '黑色安息日', title_en: 'I tre volti della paura', country: '法国/意大利/美国', desc: '马里奥·巴瓦三段式恐怖经典，鲍里斯·卡洛夫主演', rating: '7.0', douban: 'https://movie.douban.com/subject/1400563/', poster: 'https://image.tmdb.org/t/p/w500/vrMcn6CKrLjWAtHHMFL7cj8A5au.jpg' },
+    { year: 1965, title_cn: '阿尔法城', title_en: 'Alphaville', country: '法国/意大利', desc: '戈达尔科幻黑色电影，特工潜入被电脑统治的未来城市', rating: '7.7', douban: 'https://movie.douban.com/subject/1296939/', poster: 'https://image.tmdb.org/t/p/w500/fFJP3D5fJDFxN7ChqSye1DZ0fTL.jpg' },
+    { year: 1967, title_cn: '我好奇之黄', title_en: 'Jag är nyfiken - en film i gult', country: '瑞典', desc: '瑞典新浪潮争议之作，政治与性的大胆探索', rating: '6.7', douban: 'https://movie.douban.com/subject/1436543/', poster: 'https://image.tmdb.org/t/p/w500/oE6AI3yXNLjpt8OqmnWZNQhmoqA.jpg' },
+    { year: 1972, title_cn: '飞向太空', title_en: 'Солярис', country: '苏联', desc: '塔可夫斯基科幻经典，宇航员在外星海洋面对记忆幻象', rating: '8.6', douban: 'https://movie.douban.com/subject/1300977/', poster: 'https://image.tmdb.org/t/p/w500/9LB7CZdLUX2oMBtizeslonNcKLz.jpg' },
+    { year: 1972, title_cn: '慑魄惊魂', title_en: 'Tales from the Crypt', country: '英国/美国', desc: '五人误入地下墓穴，守墓人讲述各自死亡命运', rating: '7.3', douban: 'https://movie.douban.com/subject/1302978/', poster: 'https://image.tmdb.org/t/p/w500/vA3wsl2lfurU6UFVs0Hg0cZJDah.jpg' },
+    { year: 1975, title_cn: '巨蟒与圣杯', title_en: 'Monty Python and the Holy Grail', country: '英国', desc: '蒙提·派森荒诞喜剧，亚瑟王寻找圣杯的疯狂冒险', rating: '7.9', douban: 'https://movie.douban.com/subject/1294917/', poster: 'https://image.tmdb.org/t/p/w500/rRdKioixN5158D6j8lY2i6n2FE8.jpg' },
+    { year: 1975, title_cn: '鬼话连篇', title_en: 'Ghost Story Collection', country: '中国香港', desc: '香港早期恐怖片集锦，民间鬼怪故事', rating: '7.0' },
+    { year: 1976, title_cn: '索命', title_en: 'Haunted Tales', country: '中国香港', desc: '香港七十年代恐怖片，鬼魂索命的诡异故事', rating: '6.9' },
+    { year: 1977, title_cn: '香港奇案之五：奸魔', title_en: 'The Criminals Part V', country: '中国香港', desc: '香港奇案系列之犯罪纪实改编', rating: '6.1' },
+    { year: 1980, title_cn: '夜雾杀机', title_en: 'The Fog', country: '美国', desc: '约翰·卡朋特经典，神秘浓雾中鬼魂水手复仇百年小镇', rating: '6.5', douban: 'https://movie.douban.com/subject/1295269/', poster: 'https://image.tmdb.org/t/p/w500/12EeSboRofP3CI4SPmMFNNXCbtY.jpg' },
+    { year: 1980, title_cn: '碟仙', title_en: 'Ouija', country: '中国香港', desc: '香港早期灵异恐怖片，碟仙通灵引发恐怖事件', rating: '6.9' },
+    { year: 1981, title_cn: '凶榜', title_en: 'Hex', country: '中国香港', desc: '桂治洪经典邪典恐怖片，降头术与诅咒', rating: '7.2', douban: 'https://movie.douban.com/subject/1307866/', poster: 'https://image.tmdb.org/t/p/w500/u0R7zhAyJeLLYEEFAsh2B2w9wR9.jpg' },
+    { year: 1981, title_cn: '飞尸', title_en: 'Flying Corpse', country: '中国香港', desc: '香港僵尸恐怖片，飞尸作乱的猎奇故事', rating: '6.7' },
+    { year: 1981, title_cn: '守墓屋', title_en: 'The House by the Cemetery', country: '意大利', desc: '卢奇奥·弗尔奇经典，一家搬入墓地旁凶宅遭遇恐怖', rating: '6.2', douban: 'https://movie.douban.com/subject/1760969/', poster: 'https://image.tmdb.org/t/p/w500/yNUXcoopDqshs5xd2lOwUl1g4Df.jpg' },
+    { year: 1982, title_cn: '邪咒', title_en: 'The Spell', country: '中国香港', desc: '香港邪术恐怖片，巫术诅咒的恐怖报复', rating: '6.8' },
+    { year: 1982, title_cn: '魔界', title_en: 'Devil World', country: '中国香港', desc: '香港奇幻恐怖片，人间与魔界的交错', rating: '7.1' },
+    { year: 1983, title_cn: '国王与怪兽', title_en: 'Krull', country: '英国', desc: '奇幻冒险经典，王子带领战士对抗外星怪兽救公主', rating: '6.3', douban: 'https://movie.douban.com/subject/1295774/', poster: 'https://image.tmdb.org/t/p/w500/izDbySIrTmID0Nh6UqcWrUvOMjU.jpg' },
+    { year: 1987, title_cn: '空气之魂', title_en: 'Spirits of the Air, Gremlins of the Clouds', country: '澳大利亚', desc: '澳大利亚末世奇幻，沙漠废墟中的飞行梦想', rating: '7.8', douban: 'https://movie.douban.com/subject/1466340/', poster: 'https://image.tmdb.org/t/p/w500/krD8aIWPfmUT3ZxEm41RB8m9qFi.jpg' },
+    { year: 1988, title_cn: '终极天将', title_en: 'The Adventures of Baron Munchausen', country: '英国/西德', desc: '特瑞·吉列姆奇幻巨制，吹牛男爵的荒诞冒险', rating: '7.9', douban: 'https://movie.douban.com/subject/1295774/', poster: 'https://image.tmdb.org/t/p/w500/oiOwGRqwrKpg1EMUlPgRjVC49bn.jpg' },
+    { year: 1988, title_cn: '阴间大法师', title_en: 'Beetlejuice', country: '美国', desc: '蒂姆·波顿经典喜剧，鬼夫妻请捣蛋鬼驱赶新住客', rating: '7.6', douban: 'https://movie.douban.com/subject/1293182/', poster: 'https://image.tmdb.org/t/p/w500/oIw6y93AOPsayeFT8qQKHyu4wHP.jpg' },
+    { year: 1990, title_cn: '妖夜传说', title_en: 'Tales from the Darkside: The Movie', country: '美国', desc: '三段式恐怖电影，木乃伊猫妖石像鬼的诡异故事', rating: '7.2', douban: 'https://movie.douban.com/subject/1296586/', poster: 'https://image.tmdb.org/t/p/w500/5q8WK4gW45Knxhpb29IVOCbbfI7.jpg' },
+    { year: 1993, title_cn: '尸袋', title_en: 'Body Bags', country: '美国', desc: '约翰·卡朋特执导三段式恐怖合集，停尸房管理员讲述', rating: '6.9', douban: 'https://movie.douban.com/subject/1295023/', poster: 'https://image.tmdb.org/t/p/w500/xRwna1sWDByZs9hsnlabt16INHl.jpg' },
+    { year: 1993, title_cn: '魔偶奇谭4', title_en: 'Puppet Master 4', country: '美国', desc: '活体木偶对抗恶魔手下的小怪物', rating: '6.2', douban: 'https://movie.douban.com/subject/1306458/', poster: 'https://image.tmdb.org/t/p/w500/fRIpNpZVL73MGJ7E2ZYt03tggeX.jpg' },
+    { year: 1996, title_cn: '胆破心惊2', title_en: 'Trilogy of Terror II', country: '美国', desc: '三段式恐怖续集，祖尼玩偶再度登场', rating: '6.5', douban: 'https://movie.douban.com/subject/1439362/', poster: 'https://image.tmdb.org/t/p/w500/5QFPqKCyYMIKvujRIJzFJ5LlwNs.jpg' },
+    { year: 1997, title_cn: '夜半路惊魂', title_en: 'Quicksilver Highway', country: '美国', desc: '克里斯托弗·乐活演绎两段诡异公路恐怖故事', rating: '6.1', douban: 'https://movie.douban.com/subject/1306762/', poster: 'https://image.tmdb.org/t/p/w500/ktKeyB6yNo81wD60NxZvb7f1nZz.jpg' },
+    { year: 1998, title_cn: '恶夜飞魔', title_en: 'The Night Flier', country: '美国/意大利', desc: '斯蒂芬·金改编，记者追踪驾驶飞机的吸血鬼', rating: '6.8', douban: 'https://movie.douban.com/subject/1298484/', poster: 'https://image.tmdb.org/t/p/w500/3bMb6CzdKfpw0pZWVW2RbQRneIC.jpg' },
+    { year: 2000, title_cn: '红色星球', title_en: 'Red Planet', country: '美国/澳大利亚', desc: '火星殖民任务出错，宇航员在荒凉星球求生', rating: '6.5', douban: 'https://movie.douban.com/subject/1297052/', poster: 'https://image.tmdb.org/t/p/w500/vCXNCLrkPwytLue5Hi8IRyFGUfR.jpg' },
+    { year: 2007, title_cn: '这个男人来自地球', title_en: 'The Man from Earth', country: '美国', desc: '大学教授自称活了一万四千年，同事展开激烈辩论', rating: '8.5', douban: 'https://movie.douban.com/subject/2300586/', poster: 'https://image.tmdb.org/t/p/w500/6r3OUI4GC8i7nmTEa4i6fe3KKqW.jpg' },
+    { year: 2023, title_cn: '电锯惊魂10', title_en: 'Saw X', country: '美国/墨西哥/加拿大', desc: '竖锯约翰前传，在墨西哥设局惩罚骗子医疗团队', rating: '7.4', douban: 'https://movie.douban.com/subject/35903713/', poster: 'https://image.tmdb.org/t/p/w500/2bOdpbqwHPmhlbsnNlvxgnKwgOL.jpg' }
   ]
 }
