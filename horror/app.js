@@ -17,7 +17,8 @@ const CATEGORIES = {
   'cult-top10': { title: 'Cult Top 10', subtitle: '个人cult片top10 · B站浅野心-', icon: '🔥' },
   'horror-top10': { title: 'Horror Top 10', subtitle: '恐怖片十佳 · B站浅野心-', icon: '👻' },
   'erotic-cinema': { title: 'Erotic Cinema', subtitle: '情爱电影推荐 · B站浅野心-', icon: '🌹' },
-  'cult-collection': { title: 'Cult Collection', subtitle: '个人珍藏 · 经典Cult电影收藏', icon: '📼' }
+  'cult-collection': { title: 'Cult Collection', subtitle: '个人珍藏 · 经典Cult电影收藏', icon: '📼' },
+  'douban-collection': { title: 'Douban Collection', subtitle: '豆瓣片单 · 艺术/奇幻/先锋电影', icon: '🎞️' }
 }
 
 // ========== HELPERS ==========
@@ -27,7 +28,8 @@ function getCategoryLabel(cat) {
     'tim-burton': 'Tim Burton', 'john-carpenter': 'John Carpenter',
     'stephen-king': 'Stephen King', 'del-toro': 'Del Toro',
     'cult-top10': 'Cult Top10', 'horror-top10': 'Horror Top10', 'erotic-cinema': 'Erotic Cinema',
-    'cult-collection': 'Collection'
+    'cult-collection': 'Collection',
+    'douban-collection': 'Douban'
   }
   return labels[cat] || cat
 }
@@ -125,7 +127,7 @@ function renderContent() {
 
 function renderAllCategories(container) {
   let html = ''
-  const order = ['body-horror', 'cthulhu', 'rob-zombie', 'john-carpenter', 'tim-burton', 'stephen-king', 'del-toro', 'cult-top10', 'horror-top10', 'erotic-cinema', 'cult-collection']
+  const order = ['body-horror', 'cthulhu', 'rob-zombie', 'john-carpenter', 'tim-burton', 'stephen-king', 'del-toro', 'cult-top10', 'horror-top10', 'erotic-cinema', 'cult-collection', 'douban-collection']
   order.forEach(catKey => {
     const movies = MOVIES[catKey]
     if (!movies || movies.length === 0) return
