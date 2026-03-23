@@ -80,15 +80,16 @@ a:hover { color: var(--accent-hover); }
   padding: 12px 0;
   box-shadow: 0 1px 4px var(--shadow);
 }
-.nav-inner {
-  display: flex; gap: 8px; overflow-x: auto;
+.nav-row {
+  display: flex; gap: 8px; align-items: center;
   padding: 0 24px; max-width: 1400px; margin: 0 auto;
-  scrollbar-width: none;
+  flex-wrap: wrap; justify-content: center;
 }
-.nav-inner::after {
-  content: ''; flex-shrink: 0; width: 24px;
+.nav-row + .nav-row { margin-top: 8px; }
+.nav-label {
+  font-size: 11px; color: var(--text-muted); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px; margin-right: 4px;
 }
-.nav-inner::-webkit-scrollbar { display: none; }
 .nav-btn {
   flex-shrink: 0; padding: 8px 20px;
   border: 1px solid var(--border); border-radius: 20px;
