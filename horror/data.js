@@ -138,7 +138,7 @@ const MOVIES = {
 
   'stephen-king': [
     { year: 1976, title_cn: '魔女嘉莉', title_en: 'Carrie', country: '美国', desc: '被欺凌的少女在舞会上爆发念力血洗全场', rating: '7.6', douban: 'https://movie.douban.com/subject/1293493/', poster: 'https://image.tmdb.org/t/p/w500/8tT1rqlsTguyfUBMrbHR9cv1rxM.jpg' },
-    { year: 1980, title_cn: '闪灵', title_en: 'The Shining', country: '美国/英国', desc: '作家带家人看管雪山酒店，逐渐被邪灵吞噬', rating: '8.2', douban: 'https://movie.douban.com/subject/1292225/', poster: 'https://image.tmdb.org/t/p/w500/nRj5511mZdTl4koQ18bCold6FOBb.jpg' },
+    { year: 1980, title_cn: '闪灵', title_en: 'The Shining', country: '美国/英国', desc: '作家带家人看管雪山酒店，逐渐被邪灵吞噬', rating: '8.2', douban: 'https://movie.douban.com/subject/1292225/', poster: 'https://image.tmdb.org/t/p/w500/zXKCwVNVsvYeg2XapKXszm5x9tZ.jpg' },
     { year: 1983, title_cn: '克里斯汀魅力', title_en: 'Christine', country: '美国', desc: '被附身的1958年汽车疯狂杀人', rating: '6.7', poster: 'https://image.tmdb.org/t/p/w500/mMtUJke2TtIoT6JB9hkvERmsSu8.jpg' },
     { year: 1984, title_cn: '玉米地的小孩', title_en: 'Children of the Corn', country: '美国', desc: '小镇儿童集体杀死成年人，在玉米地祭祀邪神', rating: '5.8', poster: 'https://image.tmdb.org/t/p/w500/jJTrFHu3rjAgP1lryKGEsC9hqyM.jpg' },
     { year: 1986, title_cn: '伴我同行', title_en: 'Stand by Me', country: '美国', desc: '四个少年踏上寻找尸体的冒险之旅', rating: '8.9', poster: 'https://image.tmdb.org/t/p/w500/vz0w9BSehcqjDcJOjRaCk7fgJe7.jpg' },
