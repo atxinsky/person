@@ -172,7 +172,7 @@ a:hover { color: var(--accent-hover); }
 /* ========== MOVIE GRID ========== */
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 18px;
   margin-bottom: 36px;
 }
@@ -314,13 +314,13 @@ a:hover { color: var(--accent-hover); }
   .title-sub { font-size: 18px; letter-spacing: 6px; }
   .title-icon { font-size: 32px; }
   .site-desc { font-size: 13px; letter-spacing: 3px; }
-  .movie-grid { grid-template-columns: 1fr; }
+  .movie-grid { grid-template-columns: repeat(2, 1fr); }
   .section-title { font-size: 22px; }
-  .card-poster { width: 110px; min-height: 160px; }
+  .card-poster { width: 90px; min-height: 140px; }
   .movie-title-cn { font-size: 15px; }
   .stats-bar { gap: 24px; }
   .stat-num { font-size: 28px; }
 }
 @media (min-width: 1200px) {
-  .movie-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+  .movie-grid { grid-template-columns: repeat(4, 1fr); }
 }
