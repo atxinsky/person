@@ -166,6 +166,20 @@
     <a href="#hero" class="footer-top" data-i18n="footer.backToTop">Back to top ↑</a>
   </footer>
 
+  <!-- Project image lightbox -->
+  <div class="project-lightbox" id="projectLightbox" onclick="this.classList.remove('open')">
+    <img id="projectLightboxImg" src="" alt="">
+  </div>
+  <script>
+    function openProjectImage(src) {
+      const lb = document.getElementById('projectLightbox');
+      document.getElementById('projectLightboxImg').src = src;
+      lb.classList.add('open');
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') document.getElementById('projectLightbox').classList.remove('open');
+    });
+  </script>
   <script type="module" src="./main.js"></script>
 </body>
 </html>

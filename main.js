@@ -423,8 +423,8 @@ function renderProjects() {
 
   const list = document.getElementById('projectsList')
   list.innerHTML = data.items
-    .map((item, i) => `
-      <div class="project-card" style="transition-delay: ${i * 0.08}s">
+    .map((item, i) => {
+      const inner = `
         <div class="project-card-header">
           <div>
             <div class="project-name">${item.name}</div>
@@ -433,11 +433,15 @@ function renderProjects() {
           <span class="project-status">${item.status}</span>
         </div>
         <p class="project-desc">${item.desc}</p>
+        ${item.image ? `<img src="${item.image}" alt="${item.name}" class="project-thumb" onclick="event.preventDefault();event.stopPropagation();openProjectImage(this.src)">` : ''}
         <div class="project-tags">
           ${item.tags.map((t) => `<span class="project-tag">${t}</span>`).join('')}
-        </div>
-      </div>
-    `)
+        </div>`
+      if (item.url) {
+        return `<a href="${item.url}" target="_blank" class="project-card project-card-link" style="transition-delay: ${i * 0.08}s">${inner}</a>`
+      }
+      return `<div class="project-card" style="transition-delay: ${i * 0.08}s">${inner}</div>`
+    })
     .join('')
 }
 
