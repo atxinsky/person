@@ -216,10 +216,11 @@
         }
         .profile-card:hover { box-shadow: 0 32px 64px -16px rgba(26,23,20,.12); }
         .profile-avatar {
-            width: 110px; height: 110px; background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center;
-            justify-content: center; font-size: 2.8rem;
-            box-shadow: 0 0 50px -12px rgba(192,88,42,.4); animation: glow 4s ease-in-out infinite;
+            width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 20px;
+            overflow: hidden; box-shadow: 0 0 50px -12px rgba(192,88,42,.4); animation: glow 4s ease-in-out infinite;
+        }
+        .profile-avatar img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
         }
         .profile-name { font-family: var(--font-h); font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
         .profile-title { color: var(--text-sec); font-size: .9rem; margin-bottom: 20px; }
@@ -659,6 +660,7 @@
             </a>
             <div class="nav-links">
                 <a href="#intro">关于我</a>
+                <a href="#ai-view">AI理解</a>
                 <a href="#tools">工具全景</a>
                 <a href="#problems">企业痛点</a>
                 <a href="#method">落地方法</a>
@@ -764,7 +766,7 @@
             <div class="intro-grid">
                 <div class="intro-profile">
                     <div class="profile-card fade-in">
-                        <div class="profile-avatar">🤖</div>
+                        <div class="profile-avatar"><img src="avatar.jpg" alt="任新"></div>
                         <h3 class="profile-name">任新</h3>
                         <p class="profile-title">AI落地应用顾问 / 独立开发者</p>
                         <div class="profile-tags">
@@ -886,6 +888,60 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== Ch1: 我对AI的理解 ======== -->
+    <section id="ai-view" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">我对AI的理解</span>
+                <h2 class="section-title" style="color:#fff">AI是你的"外包同事"</h2>
+                <p class="section-desc" style="color:rgba(255,255,255,.55)">能力极强，但对你的业务一无所知。你要做的不是"学AI"，而是学会"怎么带这个同事"。</p>
+            </div>
+
+            <div class="mindset-card fade-in">
+                <div style="text-align:center">
+                    <div style="font-size:3.5rem;margin-bottom:16px">🧠</div>
+                    <h3 style="font-family:var(--font-h);font-size:1.5rem;color:#fff;margin-bottom:8px">重新理解AI</h3>
+                    <p style="color:rgba(255,255,255,.5);font-size:.88rem">不是万能的，也不是没用的。关键是用对方法。</p>
+                </div>
+                <div>
+                    <div class="mindset-list">
+                        <div class="mindset-item">
+                            <div class="mi-icon g">✓</div>
+                            <div>
+                                <h5>AI擅长</h5>
+                                <p>归纳总结、结构化、生成草稿、批量处理、代码生成、数据分析</p>
+                            </div>
+                        </div>
+                        <div class="mindset-item">
+                            <div class="mi-icon r">✗</div>
+                            <div>
+                                <h5>AI不擅长</h5>
+                                <p>承担责任、保证100%正确、做最终决策、理解潜规则、访问内网</p>
+                            </div>
+                        </div>
+                        <div class="mindset-item">
+                            <div class="mi-icon g">💡</div>
+                            <div>
+                                <h5>核心原则</h5>
+                                <p>从具体痛点出发，不从技术出发。先验证一个场景，再逐步扩展</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公式条 -->
+            <div class="fade-in" style="margin-top:48px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));border-radius:var(--r-lg);padding:32px 40px;text-align:center">
+                <p style="font-family:var(--font-m);font-size:1rem;color:rgba(255,255,255,.7);letter-spacing:.5px">
+                    你的业务知识 <span style="color:#fff;font-size:1.2rem;margin:0 8px">×</span>
+                    正确的AI工具 <span style="color:#fff;font-size:1.2rem;margin:0 8px">×</span>
+                    结构化表达 <span style="color:#fff;font-size:1.2rem;margin:0 8px">=</span>
+                    <strong style="color:#fff;font-size:1.15rem">AI真正落地</strong>
+                </p>
             </div>
         </div>
     </section>
@@ -1308,39 +1364,6 @@
                 </div>
             </div>
 
-            <!-- 认知重塑 -->
-            <div class="mindset-card fade-in" style="margin-top:60px">
-                <div style="text-align:center">
-                    <div style="font-size:4rem;margin-bottom:16px">🤖</div>
-                    <h3 style="font-family:var(--font-h);font-size:1.5rem;color:#fff;margin-bottom:8px">认知重塑</h3>
-                    <p style="color:rgba(255,255,255,.5);font-size:.88rem">把AI当成能力极强但对你业务一无所知的"外包同事"</p>
-                </div>
-                <div>
-                    <div class="mindset-list">
-                        <div class="mindset-item">
-                            <div class="mi-icon g">✓</div>
-                            <div>
-                                <h5>AI擅长</h5>
-                                <p>归纳总结、结构化、生成草稿、批量处理、代码生成、数据分析</p>
-                            </div>
-                        </div>
-                        <div class="mindset-item">
-                            <div class="mi-icon r">✗</div>
-                            <div>
-                                <h5>AI不擅长</h5>
-                                <p>承担责任、保证100%正确、做最终决策、理解潜规则、访问内网</p>
-                            </div>
-                        </div>
-                        <div class="mindset-item">
-                            <div class="mi-icon g">💡</div>
-                            <div>
-                                <h5>核心原则</h5>
-                                <p>从具体痛点出发，不从技术出发。先验证一个场景，再逐步扩展</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
