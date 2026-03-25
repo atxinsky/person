@@ -422,11 +422,6 @@
         }
         .coop-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(26,23,20,.08); }
         .coop-card.featured { border-color: var(--accent); }
-        .coop-card.featured::before {
-            content: '推荐'; position: absolute; top: 16px; right: -28px;
-            background: var(--accent); color: #fff; font-size: .68rem; font-weight: 700;
-            padding: 3px 32px; transform: rotate(45deg);
-        }
         .coop-icon {
             width: 48px; height: 48px; border-radius: var(--r-md); display: flex;
             align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 16px;
@@ -644,9 +639,9 @@
         }
         /* ===== 演讲模式：正文区域字体全局放大 ===== */
         /* 章节标题/描述 */
-        .section-title { font-size: 2.8rem; }
-        .section-desc { font-size: 1.25rem; }
-        .section-tag { font-size: .95rem; padding: 10px 22px; }
+        .section-title { font-size: 3.2rem; }
+        .section-desc { font-size: 1.35rem; }
+        .section-tag { font-size: 1.05rem; padding: 12px 26px; }
 
         /* 痛点卡片 */
         .problem-card h3 { font-size: 1.3rem; }
@@ -1589,14 +1584,41 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">合作方式</span>
-                <h2 class="section-title">三种合作模式，按需选择</h2>
-                <p class="section-desc">不卖系统不绑定平台。帮你的团队建立自己的AI能力，走了你也能继续用。</p>
+                <h2 class="section-title">不是选一个，是一起交付</h2>
+                <p class="section-desc">做方案不是丢个工具就走。从诊断到搭建到陪跑，三个阶段完整交付，确保你的团队真正用起来。</p>
             </div>
+
+            <!-- 流程指示 -->
+            <div class="fade-in" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:48px;flex-wrap:wrap">
+                <span style="padding:10px 24px;background:var(--accent);color:#fff;border-radius:99px;font-size:1.1rem;font-weight:700">Phase 1</span>
+                <span style="color:var(--text-sec);font-size:1.5rem">→</span>
+                <span style="padding:10px 24px;background:var(--accent);color:#fff;border-radius:99px;font-size:1.1rem;font-weight:700">Phase 2</span>
+                <span style="color:var(--text-sec);font-size:1.5rem">→</span>
+                <span style="padding:10px 24px;background:var(--accent);color:#fff;border-radius:99px;font-size:1.1rem;font-weight:700">Phase 3</span>
+            </div>
+
             <div class="coop-grid">
-                <div class="coop-card fade-in">
-                    <div class="coop-icon" style="background:var(--accent-light)">🎯</div>
+                <div class="coop-card featured fade-in">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+                        <span style="background:var(--accent);color:#fff;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;font-family:var(--font-m)">1</span>
+                        <div class="coop-icon" style="background:var(--accent-light);margin-bottom:0">🧩</div>
+                    </div>
+                    <h4>解决方案</h4>
+                    <p>先诊断业务痛点，用现有工具组合出适合你的AI工作流。快速见效，验证价值。</p>
+                    <ul class="coop-list">
+                        <li>✓ 业务诊断 + 工具选型</li>
+                        <li>✓ 工作流搭建 + 模板库</li>
+                        <li>✓ 团队培训（1-2天）</li>
+                        <li>✓ Prompt模板 + SOP交付</li>
+                    </ul>
+                </div>
+                <div class="coop-card featured fade-in">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+                        <span style="background:var(--accent);color:#fff;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;font-family:var(--font-m)">2</span>
+                        <div class="coop-icon" style="background:var(--accent-light);margin-bottom:0">🎯</div>
+                    </div>
                     <h4>定制开发</h4>
-                    <p>针对你的业务场景，从零搭建AI应用系统。知识库、智能客服、自动化工作流。</p>
+                    <p>验证有效后，针对核心场景从零搭建AI应用系统。知识库、智能客服、自动化工作流。</p>
                     <ul class="coop-list">
                         <li>✓ 需求调研 + 方案设计</li>
                         <li>✓ 系统开发 + 部署上线</li>
@@ -1605,20 +1627,12 @@
                     </ul>
                 </div>
                 <div class="coop-card featured fade-in">
-                    <div class="coop-icon" style="background:#e8f5e9">🧩</div>
-                    <h4>解决方案</h4>
-                    <p>不需要开发，用现有工具组合出适合你的AI工作流。快速见效，成本最低。</p>
-                    <ul class="coop-list">
-                        <li>✓ 业务诊断 + 工具选型</li>
-                        <li>✓ 工作流搭建 + 模板库</li>
-                        <li>✓ 团队培训（1-2天）</li>
-                        <li>✓ Prompt模板 + SOP交付</li>
-                    </ul>
-                </div>
-                <div class="coop-card fade-in">
-                    <div class="coop-icon" style="background:#fef3c7">🌱</div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+                        <span style="background:var(--accent);color:#fff;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;font-family:var(--font-m)">3</span>
+                        <div class="coop-icon" style="background:#fef3c7;margin-bottom:0">🌱</div>
+                    </div>
                     <h4>陪伴成长</h4>
-                    <p>长期顾问，按月服务。持续优化AI应用效果，解答日常使用中的各种问题。</p>
+                    <p>不是交付完就走。按月持续服务，优化效果，解答问题，确保团队真正建立AI能力。</p>
                     <ul class="coop-list">
                         <li>✓ 每周1次远程答疑</li>
                         <li>✓ 新场景持续挖掘</li>
