@@ -320,32 +320,13 @@
         }
         .preview-footer a:hover { gap: 8px; }
 
-        /* Mindset Card */
+        /* Mindset Card (reused in Ch3) */
         .mindset-card {
             background: linear-gradient(135deg, var(--dark-2), var(--dark-3));
-            border-radius: var(--r-xl); padding: 52px; display: grid;
-            grid-template-columns: 1fr 1fr; gap: 52px; align-items: center;
+            border-radius: var(--r-xl); padding: 44px; display: grid;
+            grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
             border: 1px solid rgba(192,88,42,.08);
         }
-        .mindset-diagram { position: relative; width: 260px; height: 260px; margin: 0 auto; }
-        .mindset-center {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-            width: 90px; height: 90px; background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2.2rem; box-shadow: 0 0 60px -12px rgba(192,88,42,.5);
-        }
-        .orbit-item {
-            position: absolute; width: 52px; height: 52px;
-            background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem;
-        }
-        .orbit-item:nth-child(2) { top: 0; left: 50%; transform: translateX(-50%); }
-        .orbit-item:nth-child(3) { top: 50%; right: 0; transform: translateY(-50%); }
-        .orbit-item:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); }
-        .orbit-item:nth-child(5) { top: 50%; left: 0; transform: translateY(-50%); }
-        .mindset-content h3 { font-family: var(--font-h); font-size: 1.7rem; color: #fff; margin-bottom: 12px; }
-        .mindset-content > p { color: rgba(255,255,255,.55); margin-bottom: 28px; line-height: 1.8; }
         .mindset-list { display: grid; gap: 12px; }
         .mindset-item {
             display: flex; gap: 14px; padding: 14px; background: rgba(255,255,255,.04);
@@ -360,6 +341,117 @@
         .mi-icon.r { background: rgba(239,68,68,.15); color: #ef4444; }
         .mindset-item h5 { font-size: .85rem; color: #fff; font-weight: 600; margin-bottom: 2px; }
         .mindset-item p { font-size: .78rem; color: rgba(255,255,255,.45); }
+
+        /* Scenario Table */
+        .scenario-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+        .scenario-table th {
+            background: var(--accent); color: #fff; padding: 12px 16px;
+            font-size: .82rem; font-weight: 600; text-align: left;
+        }
+        .scenario-table th:first-child { border-radius: var(--r-sm) 0 0 0; }
+        .scenario-table th:last-child { border-radius: 0 var(--r-sm) 0 0; }
+        .scenario-table td {
+            padding: 12px 16px; font-size: .82rem; border-bottom: 1px solid var(--card-border);
+            background: var(--card);
+        }
+        .scenario-table tr:last-child td { border-bottom: 0; }
+        .scenario-table tr:last-child td:first-child { border-radius: 0 0 0 var(--r-sm); }
+        .scenario-table tr:last-child td:last-child { border-radius: 0 0 var(--r-sm) 0; }
+        .scenario-table tr:hover td { background: var(--accent-light); }
+
+        /* Method Cards */
+        .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .method-card {
+            background: var(--card); border-radius: var(--r-lg); padding: 28px;
+            border: 1px solid var(--card-border); transition: all .35s cubic-bezier(.22,1,.36,1);
+        }
+        .method-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -8px rgba(26,23,20,.08); }
+        .method-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .method-card p, .method-card li { font-size: .85rem; color: var(--text-sec); line-height: 1.65; }
+        .method-card ul { padding-left: 16px; margin-top: 8px; }
+        .method-card li { margin-bottom: 4px; }
+
+        /* 6-Element Template */
+        .template-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
+        .tpl-item {
+            padding: 20px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+            border-radius: var(--r-md); text-align: center; transition: all .3s;
+        }
+        .tpl-item:hover { background: rgba(255,255,255,.08); transform: translateY(-4px); }
+        .tpl-num {
+            width: 32px; height: 32px; background: var(--accent); color: #fff; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: .8rem; font-weight: 700; margin-bottom: 10px; font-family: var(--font-m);
+        }
+        .tpl-item h5 { font-size: .95rem; color: #fff; font-weight: 700; margin-bottom: 4px; }
+        .tpl-item p { font-size: .78rem; color: rgba(255,255,255,.5); }
+
+        /* Case Study */
+        .case-card {
+            background: var(--card); border-radius: var(--r-xl); overflow: hidden;
+            border: 1px solid var(--card-border); margin-top: 32px;
+        }
+        .case-header {
+            background: var(--dark); color: #fff; padding: 24px 32px;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .case-header h4 { font-size: 1.1rem; font-weight: 700; }
+        .case-header span { font-size: .78rem; color: rgba(255,255,255,.5); }
+        .case-steps { padding: 28px 32px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+        .case-step { text-align: center; position: relative; }
+        .case-step::after {
+            content: '→'; position: absolute; right: -12px; top: 18px;
+            color: var(--card-border); font-size: 1rem;
+        }
+        .case-step:last-child::after { display: none; }
+        .cs-num {
+            width: 36px; height: 36px; background: var(--accent-light); color: var(--accent);
+            border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+            font-size: .8rem; font-weight: 700; margin-bottom: 8px; font-family: var(--font-m);
+        }
+        .case-step strong { display: block; font-size: .82rem; color: var(--text); margin-bottom: 2px; }
+        .case-step p { font-size: .72rem; color: var(--text-sec); }
+
+        /* Cooperation Cards */
+        .coop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .coop-card {
+            background: var(--card); border-radius: var(--r-lg); padding: 32px;
+            border: 1px solid var(--card-border); transition: all .35s cubic-bezier(.22,1,.36,1);
+            position: relative; overflow: hidden;
+        }
+        .coop-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(26,23,20,.08); }
+        .coop-card.featured { border-color: var(--accent); }
+        .coop-card.featured::before {
+            content: '推荐'; position: absolute; top: 16px; right: -28px;
+            background: var(--accent); color: #fff; font-size: .68rem; font-weight: 700;
+            padding: 3px 32px; transform: rotate(45deg);
+        }
+        .coop-icon {
+            width: 48px; height: 48px; border-radius: var(--r-md); display: flex;
+            align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 16px;
+        }
+        .coop-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+        .coop-card > p { font-size: .85rem; color: var(--text-sec); line-height: 1.65; margin-bottom: 16px; }
+        .coop-list { list-style: none; padding: 0; }
+        .coop-list li {
+            font-size: .82rem; color: var(--text-sec); padding: 6px 0;
+            border-bottom: 1px solid var(--card-border); display: flex; align-items: center; gap: 8px;
+        }
+        .coop-list li:last-child { border-bottom: 0; }
+
+        @media (max-width: 1024px) {
+            .mindset-card { grid-template-columns: 1fr; padding: 28px; }
+            .template-grid { grid-template-columns: repeat(2, 1fr); }
+            .method-grid { grid-template-columns: repeat(2, 1fr); }
+            .case-steps { grid-template-columns: repeat(3, 1fr); }
+            .case-step::after { display: none; }
+            .coop-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .template-grid { grid-template-columns: 1fr; }
+            .method-grid { grid-template-columns: 1fr; }
+            .case-steps { grid-template-columns: 1fr; }
+        }
 
         /* AI Tool Panorama */
         .tool-panorama { background: var(--bg-alt); }
@@ -399,6 +491,10 @@
             color: #fff; flex-shrink: 0;
         }
         .tool-card-head .tool-meta h4 { font-size: .95rem; font-weight: 700; color: var(--text); }
+        .tool-card-head .tool-meta h4 a { color: inherit; text-decoration: none; }
+        .tool-card-head .tool-meta h4 a:hover { color: var(--accent); }
+        .tool-card { cursor: pointer; }
+        a.tool-card-wrap { text-decoration: none; color: inherit; display: block; }
         .tool-card-head .tool-meta span { font-size: .72rem; color: var(--text-sec); }
         .tool-price {
             margin-left: auto; padding: 3px 10px; border-radius: 99px; font-size: .7rem; font-weight: 600;
@@ -460,57 +556,11 @@
             background: var(--bg-alt); color: var(--text-sec); border-radius: 99px; font-size: .72rem;
         }
 
-        /* Value Cards (for event companies) */
-        .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .val-card {
-            background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
-            border-radius: var(--r-lg); padding: 28px; transition: all .3s; cursor: default;
-        }
-        .val-card:hover {
-            transform: translateY(-6px); background: rgba(255,255,255,.08);
-            box-shadow: 0 20px 40px -15px rgba(0,0,0,.3);
-        }
-        .val-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .val-icon {
-            width: 44px; height: 44px; border-radius: var(--r-md);
-            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-        }
-        .val-icon.i1 { background: rgba(45,138,110,.15); }
-        .val-icon.i2 { background: rgba(192,88,42,.15); }
-        .val-icon.i3 { background: rgba(201,145,61,.15); }
-        .val-icon.i4 { background: rgba(139,92,246,.15); }
-        .val-icon.i5 { background: rgba(59,130,246,.15); }
-        .val-icon.i6 { background: rgba(239,68,68,.12); }
-        .val-card h4 { font-size: 1rem; font-weight: 700; color: #fff; }
-        .val-card > p { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.65; }
-        .val-metric {
-            display: inline-block; margin-top: 14px; padding: 4px 12px;
-            background: rgba(45,138,110,.12); color: #3ba886;
-            border-radius: 99px; font-size: .72rem; font-weight: 600;
-        }
-
-        /* Approach Steps */
-        .approach-flow { display: flex; align-items: center; gap: 12px; }
-        .approach-step {
-            flex: 1; display: flex; gap: 14px; padding: 20px;
-            background: var(--card); border: 1px solid var(--card-border);
-            border-radius: var(--r-lg); transition: all .3s;
-        }
-        .approach-step:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(26,23,20,.06); }
-        .step-num {
-            width: 32px; height: 32px; background: var(--accent); color: #fff; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: .8rem; font-weight: 700; flex-shrink: 0; font-family: var(--font-m);
-        }
-        .step-info strong { display: block; font-size: .9rem; color: var(--text); margin-bottom: 2px; }
-        .step-info p { font-size: .78rem; color: var(--text-sec); line-height: 1.5; }
-        .approach-arrow { color: var(--card-border); font-size: 1.2rem; flex-shrink: 0; }
-
         /* Quote */
         .quote-section {
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
             border-radius: var(--r-xl); padding: 52px 72px; text-align: center;
-            margin-top: 80px; position: relative; overflow: hidden;
+            margin-top: 60px; position: relative; overflow: hidden;
         }
         .quote-section::before {
             content: ''; position: absolute; top: -50%; left: -50%;
@@ -609,11 +659,10 @@
             </a>
             <div class="nav-links">
                 <a href="#intro">关于我</a>
-                <a href="#philosophy">AI理解</a>
                 <a href="#tools">工具全景</a>
-                <a href="#problems">痛点诊断</a>
-                <a href="#value">落地场景</a>
-                <a href="#approach">合作方式</a>
+                <a href="#problems">企业痛点</a>
+                <a href="#method">落地方法</a>
+                <a href="#cooperate">合作方式</a>
             </div>
             <a href="#contact" class="nav-back">预约沟通</a>
         </div>
@@ -841,62 +890,7 @@
         </div>
     </section>
 
-    <!-- AI Philosophy - Dark -->
-    <section id="philosophy" class="section section-dark">
-        <div class="container">
-            <div class="mindset-card fade-in">
-                <div style="display:flex;justify-content:center;align-items:center">
-                    <div class="mindset-diagram">
-                        <div class="mindset-center">🤖</div>
-                        <div class="orbit-item">📝</div>
-                        <div class="orbit-item">⚙️</div>
-                        <div class="orbit-item">✓</div>
-                        <div class="orbit-item">🔄</div>
-                    </div>
-                </div>
-                <div class="mindset-content">
-                    <h3>AI是"外包同事"，不是魔法</h3>
-                    <p>把AI当成能力极强但对你业务一无所知的外包。你给它的输入质量，直接决定输出质量。</p>
-                    <div class="mindset-list">
-                        <div class="mindset-item">
-                            <div class="mi-icon g">✓</div>
-                            <div>
-                                <h5>AI擅长</h5>
-                                <p>归纳总结、结构化、生成草稿、批量处理、代码生成、数据分析</p>
-                            </div>
-                        </div>
-                        <div class="mindset-item">
-                            <div class="mi-icon r">✗</div>
-                            <div>
-                                <h5>AI不擅长</h5>
-                                <p>承担责任、保证100%正确、做最终决策、理解潜规则、访问内网</p>
-                            </div>
-                        </div>
-                        <div class="mindset-item">
-                            <div class="mi-icon g">💡</div>
-                            <div>
-                                <h5>核心原则</h5>
-                                <p>从具体痛点出发，不从技术出发。先验证一个场景，再逐步扩展</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Formula -->
-            <div style="margin-top:48px;text-align:center" class="fade-in">
-                <div style="display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap">
-                    <div style="padding:12px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.7);font-size:.88rem;font-weight:600">你的业务知识</div>
-                    <span style="color:rgba(255,255,255,.3);font-size:1.2rem">×</span>
-                    <div style="padding:12px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.7);font-size:.88rem;font-weight:600">正确的AI工具</div>
-                    <span style="color:rgba(255,255,255,.3);font-size:1.2rem">×</span>
-                    <div style="padding:12px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.7);font-size:.88rem;font-weight:600">结构化表达</div>
-                    <span style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-left:8px">=</span>
-                    <div style="padding:12px 24px;background:var(--accent);border-radius:8px;color:#fff;font-size:.92rem;font-weight:700;box-shadow:0 4px 15px rgba(192,88,42,.4)">AI真正落地</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ======== Ch2: AI工具全景图 ======== -->
 
     <!-- AI Tool Panorama -->
     <section id="tools" class="section tool-panorama">
@@ -917,7 +911,7 @@
             <div class="tool-category active" id="tab-llm">
                 <div class="tool-region-label">🇨🇳 中国工具</div>
                 <div class="tool-cards">
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://chat.deepseek.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#667eea,#764ba2)">D</div>
                             <div class="tool-meta"><h4>DeepSeek</h4><span>深度求索</span></div>
@@ -930,7 +924,7 @@
                         </div>
                         <span class="tool-badge best">🏆 性价比之王</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://kimi.moonshot.cn/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:#000">K</div>
                             <div class="tool-meta"><h4>Kimi</h4><span>月之暗面</span></div>
@@ -943,7 +937,7 @@
                         </div>
                         <span class="tool-badge">📄 长文档首选</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://tongyi.aliyun.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#ff6a00,#ee0979)">通</div>
                             <div class="tool-meta"><h4>通义千问</h4><span>阿里巴巴</span></div>
@@ -956,7 +950,7 @@
                         </div>
                         <span class="tool-badge">🔗 生态完善</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://www.doubao.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:#00d4ff;color:#000">豆</div>
                             <div class="tool-meta"><h4>豆包</h4><span>字节跳动</span></div>
@@ -973,7 +967,7 @@
 
                 <div class="tool-region-label">🇺🇸 美国工具</div>
                 <div class="tool-cards">
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://chatgpt.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:#10a37f">G</div>
                             <div class="tool-meta"><h4>ChatGPT</h4><span>OpenAI · GPT-4o</span></div>
@@ -986,7 +980,7 @@
                         </div>
                         <span class="tool-badge best">🏆 综合最强</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://claude.ai/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#d97706,#ea580c)">C</div>
                             <div class="tool-meta"><h4>Claude</h4><span>Anthropic · 4.5</span></div>
@@ -999,7 +993,7 @@
                         </div>
                         <span class="tool-badge">📝 文档专家</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://gemini.google.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#4285f4,#34a853)">G</div>
                             <div class="tool-meta"><h4>Gemini</h4><span>Google · 2.0</span></div>
@@ -1012,7 +1006,7 @@
                         </div>
                         <span class="tool-badge">🌐 谷歌生态</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://grok.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:#000">X</div>
                             <div class="tool-meta"><h4>Grok</h4><span>xAI · Grok 3</span></div>
@@ -1032,7 +1026,7 @@
             <div class="tool-category" id="tab-workflow">
                 <div class="tool-region-label">🔧 平台型工具</div>
                 <div class="tool-cards cols-3">
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://www.coze.cn/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#ff6d5a,#ff9068)">扣</div>
                             <div class="tool-meta"><h4>Coze (扣子)</h4><span>字节跳动</span></div>
@@ -1047,7 +1041,7 @@
                         </div>
                         <span class="tool-badge best">🏆 入门首选</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://dify.ai/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#1e3a5f,#2a5280)">D</div>
                             <div class="tool-meta"><h4>Dify</h4><span>开源 · LLMOps</span></div>
@@ -1062,7 +1056,7 @@
                         </div>
                         <span class="tool-badge">🔒 企业私有化</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://n8n.io/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#ea4c89,#f06292)">n8n</div>
                             <div class="tool-meta"><h4>n8n</h4><span>开源 · 自动化</span></div>
@@ -1081,7 +1075,7 @@
 
                 <div class="tool-region-label">🤖 个人AI Agent（2026新趋势）</div>
                 <div class="tool-cards cols-3">
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://github.com/nicepkg/openclaw" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#f97316,#ef4444)">🐾</div>
                             <div class="tool-meta"><h4>OpenClaw</h4><span>开源 · 本地Agent</span></div>
@@ -1097,7 +1091,7 @@
                         </div>
                         <span class="tool-badge best">🏆 2026最火开源Agent</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://fastgpt.in/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:#000">F</div>
                             <div class="tool-meta"><h4>FastGPT</h4><span>开源 · 知识库</span></div>
@@ -1119,7 +1113,7 @@
             <div class="tool-category" id="tab-creative">
                 <div class="tool-region-label">🖼️ 图像生成</div>
                 <div class="tool-cards cols-3">
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://www.midjourney.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#000,#333)">MJ</div>
                             <div class="tool-meta"><h4>Midjourney</h4><span>Discord · V6.1</span></div>
@@ -1133,7 +1127,7 @@
                         </div>
                         <span class="tool-badge best">🏆 美学天花板</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://github.com/comfyanonymous/ComfyUI" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#10b981,#059669)">C</div>
                             <div class="tool-meta"><h4>ComfyUI</h4><span>开源 · 本地</span></div>
@@ -1147,7 +1141,7 @@
                         </div>
                         <span class="tool-badge">🎛️ 专业可控</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://jimeng.jianying.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#5b21b6,#7c3aed)">即</div>
                             <div class="tool-meta"><h4>即梦AI</h4><span>字节跳动</span></div>
@@ -1165,7 +1159,7 @@
 
                 <div class="tool-region-label">🎬 视频生成</div>
                 <div class="tool-cards cols-3">
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://klingai.kuaishou.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#ef4444,#f97316)">可</div>
                             <div class="tool-meta"><h4>可灵AI</h4><span>快手</span></div>
@@ -1179,7 +1173,7 @@
                         </div>
                         <span class="tool-badge best">🏆 国产最强</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://sora.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">S</div>
                             <div class="tool-meta"><h4>Sora</h4><span>OpenAI</span></div>
@@ -1193,7 +1187,7 @@
                         </div>
                         <span class="tool-badge">🌟 业界标杆</span>
                     </div>
-                    <div class="tool-card fade-in">
+                    <div class="tool-card fade-in" data-url="https://www.heygen.com/" onclick="window.open(this.dataset.url,'_blank')">
                         <div class="tool-card-head">
                             <div class="tool-logo" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">H</div>
                             <div class="tool-meta"><h4>HeyGen</h4><span>数字人平台</span></div>
@@ -1209,18 +1203,71 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 场景速查表 -->
+            <h3 style="font-size:1.1rem;font-weight:700;margin-top:48px;margin-bottom:4px" class="fade-in">📋 场景速查：什么场景用什么工具？</h3>
+            <p style="color:var(--text-sec);font-size:.85rem;margin-bottom:16px" class="fade-in">别纠结选哪个，按场景对号入座</p>
+            <table class="scenario-table fade-in">
+                <thead>
+                    <tr>
+                        <th>场景</th>
+                        <th>推荐工具</th>
+                        <th>理由</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>日常报告 / 周报 / 邮件</td>
+                        <td>DeepSeek / 豆包</td>
+                        <td>免费、快速、中文好</td>
+                    </tr>
+                    <tr>
+                        <td>长文档分析 / 合同审查</td>
+                        <td>Kimi / Claude</td>
+                        <td>长上下文、逻辑严谨</td>
+                    </tr>
+                    <tr>
+                        <td>技术方案 / 代码生成</td>
+                        <td>Claude / DeepSeek</td>
+                        <td>代码能力最强</td>
+                    </tr>
+                    <tr>
+                        <td>标书 / 投标文档</td>
+                        <td>ChatGPT / Claude</td>
+                        <td>综合能力+格式控制</td>
+                    </tr>
+                    <tr>
+                        <td>敏感数据（财务/人事）</td>
+                        <td>Dify / FastGPT（私有部署）</td>
+                        <td>数据不出企业</td>
+                    </tr>
+                    <tr>
+                        <td>营销海报 / 品牌素材</td>
+                        <td>Midjourney / 即梦AI</td>
+                        <td>美感强 / 中文免费</td>
+                    </tr>
+                    <tr>
+                        <td>产品介绍视频</td>
+                        <td>可灵AI / HeyGen</td>
+                        <td>快速出片 / 数字人</td>
+                    </tr>
+                    <tr>
+                        <td>自动化工作流</td>
+                        <td>Coze / n8n</td>
+                        <td>零代码 / 400+集成</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
-    <!-- Problems Section -->
+    <!-- ======== Ch3: 企业痛点 ======== -->
     <section id="problems" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">痛点诊断</span>
+                <span class="section-tag">你需要AI干什么？</span>
                 <h2 class="section-title">企业用AI，卡在哪？</h2>
-                <p class="section-desc">
-                    深入多个行业后发现，企业AI落地的障碍本质上只有这几类。每个问题都有可操作的解法。
-                </p>
+                <p class="section-desc">深入多个行业后发现，企业AI落地的障碍只有这5个根源。每个都有可操作的解法。</p>
             </div>
             <div class="problems-grid">
                 <div class="problem-card fade-in">
@@ -1260,125 +1307,236 @@
                     <span class="problem-tag" style="background:#fff">实战交付</span>
                 </div>
             </div>
+
+            <!-- 认知重塑 -->
+            <div class="mindset-card fade-in" style="margin-top:60px">
+                <div style="text-align:center">
+                    <div style="font-size:4rem;margin-bottom:16px">🤖</div>
+                    <h3 style="font-family:var(--font-h);font-size:1.5rem;color:#fff;margin-bottom:8px">认知重塑</h3>
+                    <p style="color:rgba(255,255,255,.5);font-size:.88rem">把AI当成能力极强但对你业务一无所知的"外包同事"</p>
+                </div>
+                <div>
+                    <div class="mindset-list">
+                        <div class="mindset-item">
+                            <div class="mi-icon g">✓</div>
+                            <div>
+                                <h5>AI擅长</h5>
+                                <p>归纳总结、结构化、生成草稿、批量处理、代码生成、数据分析</p>
+                            </div>
+                        </div>
+                        <div class="mindset-item">
+                            <div class="mi-icon r">✗</div>
+                            <div>
+                                <h5>AI不擅长</h5>
+                                <p>承担责任、保证100%正确、做最终决策、理解潜规则、访问内网</p>
+                            </div>
+                        </div>
+                        <div class="mindset-item">
+                            <div class="mi-icon g">💡</div>
+                            <div>
+                                <h5>核心原则</h5>
+                                <p>从具体痛点出发，不从技术出发。先验证一个场景，再逐步扩展</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Value for Event Companies - Dark -->
-    <section id="value" class="section section-dark">
+    <!-- ======== Ch4: 如何让AI干好 ======== -->
+    <section id="method" class="section section-dark">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">落地场景</span>
-                <h2 class="section-title">AI可以为你的公司做什么</h2>
-                <p class="section-desc">
-                    不管是活动策划、内容营销还是客户服务，AI都能找到切入点。以下是最容易落地的6个场景。
-                </p>
+                <span class="section-tag">如何让AI干好？</span>
+                <h2 class="section-title">一套可复用的AI作业流程</h2>
+                <p class="section-desc">不是理论框架，是每天都在用的实战方法。学会这套流程，任何岗位都能让AI产出专业级内容。</p>
             </div>
-            <div class="value-grid">
-                <div class="val-card fade-in">
-                    <div class="val-card-header">
-                        <div class="val-icon i1">📋</div>
-                        <h4>方案自动生成</h4>
-                    </div>
-                    <p>喂入历史案例和客户需求，几分钟出定制化方案初稿。原来写方案3天，现在3小时精修</p>
-                    <span class="val-metric">效率 ↑ 800%</span>
+
+            <!-- 6要素模板 -->
+            <h3 style="font-family:var(--font-h);font-size:1.3rem;color:#fff;margin-bottom:20px;text-align:center" class="fade-in">需求表达：6要素模板</h3>
+            <p style="color:rgba(255,255,255,.5);font-size:.88rem;text-align:center;margin-bottom:28px" class="fade-in">80%的AI产出问题，根源在于需求没说清楚。用这6个要素，一次说到位。</p>
+            <div class="template-grid fade-in">
+                <div class="tpl-item">
+                    <div class="tpl-num">1</div>
+                    <h5>目标</h5>
+                    <p>你要AI做什么？写方案/分析数据/生成文案</p>
                 </div>
-                <div class="val-card fade-in">
-                    <div class="val-card-header">
-                        <div class="val-icon i2">🧠</div>
-                        <h4>企业知识库</h4>
-                    </div>
-                    <p>案例、供应商、SOP、报价模板统一入库。新人即刻上手，老人效率翻倍</p>
-                    <span class="val-metric">新人培训周期 ↓ 70%</span>
+                <div class="tpl-item">
+                    <div class="tpl-num">2</div>
+                    <h5>受众</h5>
+                    <p>谁看这个结果？老板/客户/同事/公众</p>
                 </div>
-                <div class="val-card fade-in">
-                    <div class="val-card-header">
-                        <div class="val-icon i3">💬</div>
-                        <h4>智能客户沟通</h4>
-                    </div>
-                    <p>基于业务知识训练的AI助手，7×24小时响应咨询。理解需求、推荐方案、记录偏好</p>
-                    <span class="val-metric">响应速度 ↑ 10x</span>
+                <div class="tpl-item">
+                    <div class="tpl-num">3</div>
+                    <h5>背景</h5>
+                    <p>行业、公司、已有素材、前因后果</p>
                 </div>
-                <div class="val-card fade-in">
-                    <div class="val-card-header">
-                        <div class="val-icon i4">✍️</div>
-                        <h4>营销内容批量生产</h4>
-                    </div>
-                    <p>活动文案、朋友圈海报文字、公众号推文——AI批量生成多版本，人工精选调整</p>
-                    <span class="val-metric">内容产出 ↑ 5-10x</span>
+                <div class="tpl-item">
+                    <div class="tpl-num">4</div>
+                    <h5>约束</h5>
+                    <p>字数、格式、风格、禁忌、截止时间</p>
                 </div>
-                <div class="val-card fade-in">
-                    <div class="val-card-header">
-                        <div class="val-icon i5">📊</div>
-                        <h4>活动数据复盘</h4>
-                    </div>
-                    <p>参与数据、客户反馈、执行记录——AI自动分析，生成复盘报告和优化建议</p>
-                    <span class="val-metric">分析时间 ↓ 90%</span>
+                <div class="tpl-item">
+                    <div class="tpl-num">5</div>
+                    <h5>结构</h5>
+                    <p>输出格式：表格/大纲/分段/JSON</p>
                 </div>
-                <div class="val-card fade-in">
-                    <div class="val-card-header">
-                        <div class="val-icon i6">🔄</div>
-                        <h4>流程自动化</h4>
+                <div class="tpl-item">
+                    <div class="tpl-num">6</div>
+                    <h5>验收</h5>
+                    <p>什么样的结果算合格？给出评判标准</p>
+                </div>
+            </div>
+
+            <!-- 三大技巧 -->
+            <div class="method-grid fade-in" style="margin-top:48px">
+                <div class="method-card" style="background:var(--dark-2);border-color:rgba(255,255,255,.08)">
+                    <h4 style="color:#fff">✍️ 去"AI味"三技巧</h4>
+                    <ul style="color:rgba(255,255,255,.5)">
+                        <li>喂入你自己的文字作为风格样本</li>
+                        <li>要求"像人说话"，禁止空洞套话</li>
+                        <li>分段生成 → 人工润色 → 拼装成品</li>
+                    </ul>
+                </div>
+                <div class="method-card" style="background:var(--dark-2);border-color:rgba(255,255,255,.08)">
+                    <h4 style="color:#fff">🔍 三层验真机制</h4>
+                    <ul style="color:rgba(255,255,255,.5)">
+                        <li><strong style="color:#fff">自查</strong>：要求AI标注不确定的部分</li>
+                        <li><strong style="color:#fff">交叉</strong>：用另一个AI验证关键事实</li>
+                        <li><strong style="color:#fff">人审</strong>：专业判断最终把关</li>
+                    </ul>
+                </div>
+                <div class="method-card" style="background:var(--dark-2);border-color:rgba(255,255,255,.08)">
+                    <h4 style="color:#fff">🔒 安全合规原则</h4>
+                    <ul style="color:rgba(255,255,255,.5)">
+                        <li>敏感数据脱敏后再喂入</li>
+                        <li>核心商业机密用私有部署方案</li>
+                        <li>AI输出不直接发布，必须人工终审</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 案例 -->
+            <h3 style="font-family:var(--font-h);font-size:1.3rem;color:#fff;margin:60px 0 12px;text-align:center" class="fade-in">实战案例</h3>
+            <p style="color:rgba(255,255,255,.5);font-size:.88rem;text-align:center;margin-bottom:8px" class="fade-in">真实岗位、真实流程、真实效果提升</p>
+
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <span style="font-size:1.5rem">📋</span>
+                    <div>
+                        <h4>商务岗：标书制作</h4>
+                        <span>原来3天 → 现在3小时</span>
                     </div>
-                    <p>报价→合同→排期→供应商对接——信息自动流转，减少人工传递中的遗漏和延迟</p>
-                    <span class="val-metric">人工环节 ↓ 60%</span>
+                </div>
+                <div class="case-steps">
+                    <div class="case-step">
+                        <div class="cs-num">1</div>
+                        <strong>读招标文件</strong>
+                        <p>AI提取全部响应点</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">2</div>
+                        <strong>拆解响应点</strong>
+                        <p>自动生成响应矩阵</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">3</div>
+                        <strong>逐章撰写</strong>
+                        <p>喂入公司资质+案例</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">4</div>
+                        <strong>填充审核</strong>
+                        <p>AI交叉检查一致性</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">5</div>
+                        <strong>格式去痕</strong>
+                        <p>去AI味+排版定稿</p>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card fade-in">
+                <div class="case-header">
+                    <span style="font-size:1.5rem">💰</span>
+                    <div>
+                        <h4>财务岗：回款匹配</h4>
+                        <span>原来半天手工 → 现在10分钟</span>
+                    </div>
+                </div>
+                <div class="case-steps">
+                    <div class="case-step">
+                        <div class="cs-num">1</div>
+                        <strong>数据清洗</strong>
+                        <p>AI统一格式+去重</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">2</div>
+                        <strong>初步匹配</strong>
+                        <p>按金额+客户名匹配</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">3</div>
+                        <strong>差异标注</strong>
+                        <p>自动标出不匹配项</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">4</div>
+                        <strong>异常处理</strong>
+                        <p>AI给出可能原因</p>
+                    </div>
+                    <div class="case-step">
+                        <div class="cs-num">5</div>
+                        <strong>生成报告</strong>
+                        <p>一键输出对账单</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Approach -->
-    <section id="approach" class="section">
+    <!-- ======== Ch5: 合作方式 ======== -->
+    <section id="cooperate" class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">合作方式</span>
-                <h2 class="section-title">怎么合作</h2>
+                <h2 class="section-title">三种合作模式，按需选择</h2>
                 <p class="section-desc">不卖系统不绑定平台。帮你的团队建立自己的AI能力，走了你也能继续用。</p>
             </div>
-
-            <!-- Formula -->
-            <div class="formula-bar fade-in">
-                <div class="formula-item">诊断痛点</div>
-                <span class="formula-op">→</span>
-                <div class="formula-item">快速验证</div>
-                <span class="formula-op">→</span>
-                <div class="formula-item">迭代优化</div>
-                <span class="formula-op">→</span>
-                <div class="formula-item">能力交接</div>
-                <span class="formula-eq">=</span>
-                <div class="formula-result">独立运营</div>
-            </div>
-
-            <div class="approach-flow fade-in">
-                <div class="approach-step">
-                    <div class="step-num">1</div>
-                    <div class="step-info">
-                        <strong>诊断痛点</strong>
-                        <p>深入了解业务流程，找到投入产出比最高的3个AI切入点</p>
-                    </div>
+            <div class="coop-grid">
+                <div class="coop-card fade-in">
+                    <div class="coop-icon" style="background:var(--accent-light)">🎯</div>
+                    <h4>定制开发</h4>
+                    <p>针对你的业务场景，从零搭建AI应用系统。知识库、智能客服、自动化工作流。</p>
+                    <ul class="coop-list">
+                        <li>✓ 需求调研 + 方案设计</li>
+                        <li>✓ 系统开发 + 部署上线</li>
+                        <li>✓ 培训交接 + 运维文档</li>
+                        <li>✓ 30天售后支持</li>
+                    </ul>
                 </div>
-                <span class="approach-arrow">→</span>
-                <div class="approach-step">
-                    <div class="step-num">2</div>
-                    <div class="step-info">
-                        <strong>快速验证</strong>
-                        <p>1-2周搭建最小可用产品。一个知识库+一个智能助手，让团队先用起来</p>
-                    </div>
+                <div class="coop-card featured fade-in">
+                    <div class="coop-icon" style="background:#e8f5e9">🧩</div>
+                    <h4>解决方案</h4>
+                    <p>不需要开发，用现有工具组合出适合你的AI工作流。快速见效，成本最低。</p>
+                    <ul class="coop-list">
+                        <li>✓ 业务诊断 + 工具选型</li>
+                        <li>✓ 工作流搭建 + 模板库</li>
+                        <li>✓ 团队培训（1-2天）</li>
+                        <li>✓ Prompt模板 + SOP交付</li>
+                    </ul>
                 </div>
-                <span class="approach-arrow">→</span>
-                <div class="approach-step">
-                    <div class="step-num">3</div>
-                    <div class="step-info">
-                        <strong>迭代优化</strong>
-                        <p>根据使用反馈持续调整，优化知识库内容和AI回复质量</p>
-                    </div>
-                </div>
-                <span class="approach-arrow">→</span>
-                <div class="approach-step">
-                    <div class="step-num">4</div>
-                    <div class="step-info">
-                        <strong>能力交接</strong>
-                        <p>培训团队独立使用和维护AI系统，交付完整文档和操作手册</p>
-                    </div>
+                <div class="coop-card fade-in">
+                    <div class="coop-icon" style="background:#fef3c7">🌱</div>
+                    <h4>陪伴成长</h4>
+                    <p>长期顾问，按月服务。持续优化AI应用效果，解答日常使用中的各种问题。</p>
+                    <ul class="coop-list">
+                        <li>✓ 每周1次远程答疑</li>
+                        <li>✓ 新场景持续挖掘</li>
+                        <li>✓ 工具升级跟踪</li>
+                        <li>✓ 团队AI能力评估</li>
+                    </ul>
                 </div>
             </div>
 
@@ -1399,9 +1557,7 @@
             <div class="section-header" style="margin-bottom:32px">
                 <span class="section-tag">开始合作</span>
                 <h2 class="section-title">聊聊你的业务场景</h2>
-                <p class="section-desc">
-                    不需要懂技术，只需要了解自己的业务。30分钟沟通，我来告诉你AI能帮你做什么、不能做什么。
-                </p>
+                <p class="section-desc">不需要懂技术，只需要了解自己的业务。30分钟沟通，我来告诉你AI能帮你做什么、不能做什么。</p>
             </div>
             <div class="cta-grid">
                 <a href="mailto:atxinsky@gmail.com" class="cta-btn cta-btn-primary">
@@ -1437,7 +1593,6 @@
                 document.querySelectorAll('.tool-category').forEach(c => c.classList.remove('active'));
                 tab.classList.add('active');
                 document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-                // Re-observe newly visible fade-in elements
                 document.querySelectorAll('#tab-' + tab.dataset.tab + ' .fade-in:not(.visible)').forEach(el => obs.observe(el));
             });
         });
