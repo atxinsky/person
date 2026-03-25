@@ -361,6 +361,78 @@
         .mindset-item h5 { font-size: .85rem; color: #fff; font-weight: 600; margin-bottom: 2px; }
         .mindset-item p { font-size: .78rem; color: rgba(255,255,255,.45); }
 
+        /* AI Tool Panorama */
+        .tool-panorama { background: var(--bg-alt); }
+        .tool-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .tool-tab {
+            padding: 10px 22px; border-radius: 99px; font-size: .88rem; font-weight: 600;
+            border: 2px solid var(--card-border); background: var(--card); color: var(--text-sec);
+            cursor: pointer; transition: all .3s; user-select: none;
+        }
+        .tool-tab.active { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+        .tool-tab:hover { border-color: var(--accent); }
+        .tool-category { display: none; }
+        .tool-category.active { display: block; }
+        .tool-region-label {
+            display: flex; align-items: center; gap: 10px; margin: 28px 0 16px;
+            font-size: .85rem; font-weight: 700; color: var(--text-sec); text-transform: uppercase;
+        }
+        .tool-region-label::after {
+            content: ''; flex: 1; height: 1px; background: var(--card-border);
+        }
+        .tool-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .tool-card {
+            background: var(--card); border-radius: var(--r-lg); padding: 22px;
+            border: 1px solid var(--card-border); transition: all .35s cubic-bezier(.22,1,.36,1);
+            cursor: default; position: relative; overflow: hidden;
+        }
+        .tool-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .4s;
+        }
+        .tool-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px -8px rgba(26,23,20,.1); }
+        .tool-card:hover::before { transform: scaleX(1); }
+        .tool-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .tool-logo {
+            width: 44px; height: 44px; border-radius: var(--r-md); display: flex;
+            align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800;
+            color: #fff; flex-shrink: 0;
+        }
+        .tool-card-head .tool-meta h4 { font-size: .95rem; font-weight: 700; color: var(--text); }
+        .tool-card-head .tool-meta span { font-size: .72rem; color: var(--text-sec); }
+        .tool-price {
+            margin-left: auto; padding: 3px 10px; border-radius: 99px; font-size: .7rem; font-weight: 600;
+        }
+        .tool-price.free { background: #e8f5e9; color: var(--success); }
+        .tool-price.paid { background: #fef3c7; color: #b45309; }
+        .tool-ratings { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+        .rating-row { display: flex; align-items: center; justify-content: space-between; }
+        .rating-label { font-size: .75rem; color: var(--text-sec); }
+        .rating-stars { font-size: .7rem; letter-spacing: 1px; color: var(--accent); }
+        .rating-stars .empty { color: var(--card-border); }
+        .tool-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 99px;
+            font-size: .72rem; font-weight: 700; background: var(--accent-light); color: var(--accent);
+        }
+        .tool-badge.best { background: var(--accent); color: #fff; }
+        /* Workflow cards wider */
+        .tool-cards.cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .tool-card .tool-desc {
+            font-size: .78rem; color: var(--text-sec); line-height: 1.55; margin-bottom: 12px;
+        }
+        .tool-features { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+        .tool-feat {
+            padding: 2px 8px; background: var(--bg-alt); border-radius: 99px;
+            font-size: .66rem; color: var(--text-sec); font-weight: 500;
+        }
+        @media (max-width: 1024px) {
+            .tool-cards { grid-template-columns: repeat(2, 1fr); }
+            .tool-cards.cols-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .tool-cards, .tool-cards.cols-3 { grid-template-columns: 1fr; }
+        }
+
         /* Problem Cards */
         .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .problem-card {
@@ -538,6 +610,7 @@
             <div class="nav-links">
                 <a href="#intro">关于我</a>
                 <a href="#philosophy">AI理解</a>
+                <a href="#tools">工具全景</a>
                 <a href="#problems">痛点诊断</a>
                 <a href="#value">落地场景</a>
                 <a href="#approach">合作方式</a>
@@ -825,6 +898,320 @@
         </div>
     </section>
 
+    <!-- AI Tool Panorama -->
+    <section id="tools" class="section tool-panorama">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">AI工具全景图</span>
+                <h2 class="section-title">选对工具，事半功倍</h2>
+                <p class="section-desc">不同工具有不同长处。从对话到工作流到创作，一图看懂。</p>
+            </div>
+
+            <div class="tool-tabs">
+                <div class="tool-tab active" data-tab="llm">💬 大语言模型</div>
+                <div class="tool-tab" data-tab="workflow">⚙️ 工作流 / Agent</div>
+                <div class="tool-tab" data-tab="creative">🎨 图像 / 视频生成</div>
+            </div>
+
+            <!-- LLM Category -->
+            <div class="tool-category active" id="tab-llm">
+                <div class="tool-region-label">🇨🇳 中国工具</div>
+                <div class="tool-cards">
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#667eea,#764ba2)">D</div>
+                            <div class="tool-meta"><h4>DeepSeek</h4><span>深度求索</span></div>
+                            <span class="tool-price free">免费/极低</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">长文写作</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">代码能力</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">推理深度</span><span class="rating-stars">★★★★★</span></div>
+                        </div>
+                        <span class="tool-badge best">🏆 性价比之王</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:#000">K</div>
+                            <div class="tool-meta"><h4>Kimi</h4><span>月之暗面</span></div>
+                            <span class="tool-price free">免费</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">长文写作</span><span class="rating-stars">★★★★<span class="empty">★</span></span></div>
+                            <div class="rating-row"><span class="rating-label">文件处理</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">联网搜索</span><span class="rating-stars">★★★★★</span></div>
+                        </div>
+                        <span class="tool-badge">📄 长文档首选</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#ff6a00,#ee0979)">通</div>
+                            <div class="tool-meta"><h4>通义千问</h4><span>阿里巴巴</span></div>
+                            <span class="tool-price free">免费/付费</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">长文写作</span><span class="rating-stars">★★★★<span class="empty">★</span></span></div>
+                            <div class="rating-row"><span class="rating-label">代码能力</span><span class="rating-stars">★★★★<span class="empty">★</span></span></div>
+                            <div class="rating-row"><span class="rating-label">多模态</span><span class="rating-stars">★★★★<span class="empty">★</span></span></div>
+                        </div>
+                        <span class="tool-badge">🔗 生态完善</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:#00d4ff;color:#000">豆</div>
+                            <div class="tool-meta"><h4>豆包</h4><span>字节跳动</span></div>
+                            <span class="tool-price free">免费</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">日常对话</span><span class="rating-stars">★★★★<span class="empty">★</span></span></div>
+                            <div class="rating-row"><span class="rating-label">联网搜索</span><span class="rating-stars">★★★★<span class="empty">★</span></span></div>
+                            <div class="rating-row"><span class="rating-label">易上手</span><span class="rating-stars">★★★★★</span></div>
+                        </div>
+                        <span class="tool-badge">👋 新手友好</span>
+                    </div>
+                </div>
+
+                <div class="tool-region-label">🇺🇸 美国工具</div>
+                <div class="tool-cards">
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:#10a37f">G</div>
+                            <div class="tool-meta"><h4>ChatGPT</h4><span>OpenAI · GPT-4o</span></div>
+                            <span class="tool-price paid">$20/月</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">综合能力</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">图像生成</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">插件生态</span><span class="rating-stars">★★★★★</span></div>
+                        </div>
+                        <span class="tool-badge best">🏆 综合最强</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#d97706,#ea580c)">C</div>
+                            <div class="tool-meta"><h4>Claude</h4><span>Anthropic · 4.5</span></div>
+                            <span class="tool-price paid">$20/月</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">长文写作</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">代码能力</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">逻辑严谨</span><span class="rating-stars">★★★★★</span></div>
+                        </div>
+                        <span class="tool-badge">📝 文档专家</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#4285f4,#34a853)">G</div>
+                            <div class="tool-meta"><h4>Gemini</h4><span>Google · 2.0</span></div>
+                            <span class="tool-price free">免费/付费</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">多模态</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">实时信息</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">长上下文</span><span class="rating-stars">★★★★★</span></div>
+                        </div>
+                        <span class="tool-badge">🌐 谷歌生态</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:#000">X</div>
+                            <div class="tool-meta"><h4>Grok</h4><span>xAI · Grok 3</span></div>
+                            <span class="tool-price paid">X Premium</span>
+                        </div>
+                        <div class="tool-ratings">
+                            <div class="rating-row"><span class="rating-label">实时信息</span><span class="rating-stars">★★★★★</span></div>
+                            <div class="rating-row"><span class="rating-label">推理能力</span><span class="rating-stars">★★★★<span class="empty">★</span></span></div>
+                            <div class="rating-row"><span class="rating-label">无审查</span><span class="rating-stars">★★★★★</span></div>
+                        </div>
+                        <span class="tool-badge">🐦 X平台集成</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow / Agent Category -->
+            <div class="tool-category" id="tab-workflow">
+                <div class="tool-region-label">🔧 平台型工具</div>
+                <div class="tool-cards cols-3">
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#ff6d5a,#ff9068)">扣</div>
+                            <div class="tool-meta"><h4>Coze (扣子)</h4><span>字节跳动</span></div>
+                            <span class="tool-price free">免费</span>
+                        </div>
+                        <p class="tool-desc">零代码搭建AI Bot，可发布到微信/飞书/网页。适合快速验证想法。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">可视化搭建</span>
+                            <span class="tool-feat">插件市场</span>
+                            <span class="tool-feat">多平台发布</span>
+                            <span class="tool-feat">知识库</span>
+                        </div>
+                        <span class="tool-badge best">🏆 入门首选</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#1e3a5f,#2a5280)">D</div>
+                            <div class="tool-meta"><h4>Dify</h4><span>开源 · LLMOps</span></div>
+                            <span class="tool-price free">免费/云版付费</span>
+                        </div>
+                        <p class="tool-desc">企业级LLM应用开发平台，支持私有部署，数据不出企业。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">开源可控</span>
+                            <span class="tool-feat">RAG知识库</span>
+                            <span class="tool-feat">多模型切换</span>
+                            <span class="tool-feat">API输出</span>
+                        </div>
+                        <span class="tool-badge">🔒 企业私有化</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#ea4c89,#f06292)">n8n</div>
+                            <div class="tool-meta"><h4>n8n</h4><span>开源 · 自动化</span></div>
+                            <span class="tool-price free">免费自部署</span>
+                        </div>
+                        <p class="tool-desc">类似Zapier的自动化工具，可连接几乎所有SaaS服务，支持AI节点。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">400+集成</span>
+                            <span class="tool-feat">自托管</span>
+                            <span class="tool-feat">代码节点</span>
+                            <span class="tool-feat">Webhook</span>
+                        </div>
+                        <span class="tool-badge">🔗 万物互联</span>
+                    </div>
+                </div>
+
+                <div class="tool-region-label">🤖 个人AI Agent（2026新趋势）</div>
+                <div class="tool-cards cols-3">
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#f97316,#ef4444)">🐾</div>
+                            <div class="tool-meta"><h4>OpenClaw</h4><span>开源 · 本地Agent</span></div>
+                            <span class="tool-price free">免费开源</span>
+                        </div>
+                        <p class="tool-desc">GitHub 2周破15万星。运行在本地，通过聊天软件指挥电脑执行任务。创始人用AI十天写出整个项目。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">本地运行</span>
+                            <span class="tool-feat">隐私优先</span>
+                            <span class="tool-feat">多模型</span>
+                            <span class="tool-feat">技能系统</span>
+                            <span class="tool-feat">主动式助手</span>
+                        </div>
+                        <span class="tool-badge best">🏆 2026最火开源Agent</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:#000">F</div>
+                            <div class="tool-meta"><h4>FastGPT</h4><span>开源 · 知识库</span></div>
+                            <span class="tool-price free">免费自部署</span>
+                        </div>
+                        <p class="tool-desc">专注知识库问答场景，支持文档导入、自动分段、语义检索。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">知识库问答</span>
+                            <span class="tool-feat">工作流编排</span>
+                            <span class="tool-feat">多模型</span>
+                            <span class="tool-feat">API</span>
+                        </div>
+                        <span class="tool-badge">📚 知识库专家</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creative Category -->
+            <div class="tool-category" id="tab-creative">
+                <div class="tool-region-label">🖼️ 图像生成</div>
+                <div class="tool-cards cols-3">
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#000,#333)">MJ</div>
+                            <div class="tool-meta"><h4>Midjourney</h4><span>Discord · V6.1</span></div>
+                            <span class="tool-price paid">$10/月起</span>
+                        </div>
+                        <p class="tool-desc">艺术感最强，适合营销海报、品牌视觉、概念设计。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">艺术风格</span>
+                            <span class="tool-feat">高美感</span>
+                            <span class="tool-feat">V6.1</span>
+                        </div>
+                        <span class="tool-badge best">🏆 美学天花板</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#10b981,#059669)">C</div>
+                            <div class="tool-meta"><h4>ComfyUI</h4><span>开源 · 本地</span></div>
+                            <span class="tool-price free">免费</span>
+                        </div>
+                        <p class="tool-desc">专业级图像生成工作流，支持ControlNet、LoRA等高级控制。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">节点式</span>
+                            <span class="tool-feat">可控性强</span>
+                            <span class="tool-feat">本地运行</span>
+                        </div>
+                        <span class="tool-badge">🎛️ 专业可控</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#5b21b6,#7c3aed)">即</div>
+                            <div class="tool-meta"><h4>即梦AI</h4><span>字节跳动</span></div>
+                            <span class="tool-price free">免费</span>
+                        </div>
+                        <p class="tool-desc">国产免费方案，中文Prompt理解好，适合日常快速出图。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">中文友好</span>
+                            <span class="tool-feat">风格多样</span>
+                            <span class="tool-feat">快速出图</span>
+                        </div>
+                        <span class="tool-badge">🇨🇳 国产免费</span>
+                    </div>
+                </div>
+
+                <div class="tool-region-label">🎬 视频生成</div>
+                <div class="tool-cards cols-3">
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#ef4444,#f97316)">可</div>
+                            <div class="tool-meta"><h4>可灵AI</h4><span>快手</span></div>
+                            <span class="tool-price free">免费/付费</span>
+                        </div>
+                        <p class="tool-desc">国产视频生成标杆，支持5秒/10秒视频，运动流畅度高。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">图生视频</span>
+                            <span class="tool-feat">运动控制</span>
+                            <span class="tool-feat">高清输出</span>
+                        </div>
+                        <span class="tool-badge best">🏆 国产最强</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">S</div>
+                            <div class="tool-meta"><h4>Sora</h4><span>OpenAI</span></div>
+                            <span class="tool-price paid">ChatGPT Plus</span>
+                        </div>
+                        <p class="tool-desc">目前最强的文生视频模型，物理规律理解出色。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">世界模型</span>
+                            <span class="tool-feat">物理真实</span>
+                            <span class="tool-feat">长视频</span>
+                        </div>
+                        <span class="tool-badge">🌟 业界标杆</span>
+                    </div>
+                    <div class="tool-card fade-in">
+                        <div class="tool-card-head">
+                            <div class="tool-logo" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">H</div>
+                            <div class="tool-meta"><h4>HeyGen</h4><span>数字人平台</span></div>
+                            <span class="tool-price paid">$24/月起</span>
+                        </div>
+                        <p class="tool-desc">数字人视频生成，适合培训视频、产品介绍、多语言营销。</p>
+                        <div class="tool-features">
+                            <span class="tool-feat">数字人</span>
+                            <span class="tool-feat">口型同步</span>
+                            <span class="tool-feat">多语言</span>
+                        </div>
+                        <span class="tool-badge">👤 数字人首选</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Problems Section -->
     <section id="problems" class="section section-alt">
         <div class="container">
@@ -1042,6 +1429,18 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+        // Tool tabs
+        document.querySelectorAll('.tool-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tool-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tool-category').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+                // Re-observe newly visible fade-in elements
+                document.querySelectorAll('#tab-' + tab.dataset.tab + ' .fade-in:not(.visible)').forEach(el => obs.observe(el));
+            });
+        });
 
         // Active nav
         const sections = document.querySelectorAll('section[id]');
