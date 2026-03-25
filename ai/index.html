@@ -637,6 +637,26 @@
             .formula-bar { gap: 6px; }
             .formula-item { padding: 6px 12px; font-size: .75rem; }
         }
+        /* Work Screenshots */
+        .work-screenshots { display: flex; gap: 8px; margin-top: 10px; }
+        .work-thumb {
+            width: 80px; height: 50px; object-fit: cover; border-radius: 6px;
+            border: 1px solid var(--card-border); cursor: pointer; transition: all .3s;
+        }
+        .work-thumb:hover { transform: scale(1.08); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,.85);
+            display: none; align-items: center; justify-content: center;
+            cursor: zoom-out; backdrop-filter: blur(8px);
+        }
+        .lightbox.open { display: flex; }
+        .lightbox img {
+            max-width: 92vw; max-height: 90vh; border-radius: var(--r-md);
+            box-shadow: 0 20px 60px rgba(0,0,0,.5);
+        }
+
         /* ===== 演讲模式：正文区域字体全局放大 ===== */
         /* 章节标题/描述 */
         .section-title { font-size: 3.2rem; }
@@ -878,6 +898,10 @@
                                     <span class="work-tag">Node.js</span>
                                     <span class="work-tag">ML</span>
                                     <span class="work-tag">4年实盘</span>
+                                </div>
+                                <div class="work-screenshots">
+                                    <img src="case-screener.png" alt="行情监控与筛选系统" class="work-thumb" onclick="openLightbox(this.src)">
+                                    <img src="case-dashboard.png" alt="全市场行情仪表盘" class="work-thumb" onclick="openLightbox(this.src)">
                                 </div>
                             </div>
                         </div>
@@ -1718,6 +1742,22 @@
                 a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent)' : '';
             });
         });
+    </script>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="">
+    </div>
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = src;
+            lb.classList.add('open');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
     </script>
 </body>
 </html>
